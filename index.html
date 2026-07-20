@@ -13,7 +13,7 @@
     <title>Dragon Ball Memotest</title>
 </head>
 <body>
-    <header>
+    <header id="encabezadoPrincipal">
         <h1>Dragon Ball Memotest</h1>
 
         <p>
@@ -21,17 +21,74 @@
         </p>
     </header>
 
-    <main id="inicio">
-        <section>
-            <h2 id="titulo-presentacion">Prepará tu partida</h2>
+    <main id="contenidoPrincipal">
+        <section
+            id="inicioPartida"
+        >
+            <h2 id="tituloInicioPartida">Prepará tu partida</h2>
 
             <p>
                 Ingresá tu nombre y seleccioná una dificultad para comenzar.
             </p>
+
+            <form id="formularioInicio">
+                <div class="grupoCampo">
+                    <label for="nombreJugador">
+                        Nombre del jugador
+                    </label>
+
+                    <input
+                        id="nombreJugador"
+                        name="nombreJugador"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="Ingresá tu nombre"
+                    >
+                </div>
+
+                <div class="grupoCampo">
+                    <label for="nivelDificultad">
+                        Nivel de dificultad
+                    </label>
+
+                    <select
+                        id="nivelDificultad"
+                        name="nivelDificultad"
+                    >
+                        <option value="">
+                            Seleccioná un nivel
+                        </option>
+
+                        <option value="facil">
+                            Fácil - 16 cartas
+                        </option>
+
+                        <option value="medio">
+                            Medio - 20 cartas
+                        </option>
+
+                        <option value="dificil">
+                            Difícil - 36 cartas
+                        </option>
+                    </select>
+                </div>
+
+                <p
+                    id="mensajeErrorInicio"
+                    class="mensajeError"
+                ></p>
+
+                <button
+                    id="botonIniciarPartida"
+                    type="submit"
+                >
+                    Comenzar partida
+                </button>
+            </form>
         </section>
     </main>
 
-    <footer>
+    <footer id="piePagina">
         <p>Desarrollado con ❤ por Sosa Ulises, Terrazzino Franco y Gallaretto Leonel</p>
     </footer>
 </body>
