@@ -1,0 +1,209 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(8, 28, 48);
+    background-image:
+        linear-gradient(
+            rgba(5, 20, 35, 0.48),
+            rgba(5, 20, 35, 0.65)
+        ),
+        url("../assets/img/dbz.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+#encabezadoPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 28px 16px 10px;
+    text-align: center;
+}
+
+#encabezadoPrincipal h1 {
+    color: rgb(255, 177, 0);
+    font-family: "Bangers", Arial, sans-serif;
+    font-size: 58px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-shadow:
+        3px 3px 0 rgb(16, 65, 130),
+        5px 5px 0 rgba(0, 0, 0, 0.55);
+}
+
+#encabezadoPrincipal p {
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+#contenidoPrincipal {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px 36px;
+}
+
+#inicioPartida {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 520px;
+    padding: 38px;
+    border: 3px solid rgb(255, 150, 0);
+    border-radius: 18px;
+    background-color: rgba(6, 35, 67, 0.94);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+#inicioPartida h2 {
+    color: rgb(255, 177, 0);
+    font-family: "Bangers", Arial, sans-serif;
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgb(16, 65, 130);
+}
+
+#inicioPartida > p {
+    max-width: 390px;
+    margin: 0 auto;
+    color: rgb(238, 243, 248);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#formularioInicio {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.grupoCampo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupoCampo label {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.grupoCampo input,
+.grupoCampo select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid rgb(185, 198, 212);
+    border-radius: 9px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(30, 30, 30);
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+}
+
+.grupoCampo input:focus,
+.grupoCampo select:focus {
+    border-color: rgb(255, 150, 0);
+    outline: none;
+}
+
+.mensajeError {
+    min-height: 20px;
+    color: rgb(255, 210, 70);
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+}
+
+#botonIniciarPartida {
+    padding: 13px;
+    border: 3px solid rgb(255, 190, 0);
+    border-radius: 9px;
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    font-family: "Bangers", Arial, sans-serif;
+    font-size: 23px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+#botonIniciarPartida:hover {
+    background-color: rgb(220, 65, 0);
+}
+
+#piePagina {
+    padding: 14px;
+    background-color: rgba(0, 0, 0, 0.82);
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    #encabezadoPrincipal h1 {
+        font-size: 44px;
+    }
+
+    #encabezadoPrincipal p {
+        font-size: 16px;
+    }
+
+    #inicioPartida {
+        max-width: 460px;
+        padding: 30px 26px;
+    }
+
+    #inicioPartida h2 {
+        font-size: 33px;
+    }
+}
+
+@media (max-width: 480px) {
+    #encabezadoPrincipal {
+        padding-top: 20px;
+    }
+
+    #encabezadoPrincipal h1 {
+        font-size: 37px;
+        letter-spacing: 2px;
+    }
+
+    #encabezadoPrincipal p {
+        font-size: 14px;
+    }
+
+    #contenidoPrincipal {
+        align-items: flex-start;
+        padding-top: 18px;
+    }
+
+    #inicioPartida {
+        padding: 26px 20px;
+        border-width: 2px;
+    }
+
+    #inicioPartida h2 {
+        font-size: 30px;
+    }
+
+    #botonIniciarPartida {
+        font-size: 21px;
+    }
+
+    #piePagina {
+        font-size: 12px;
+    }
+}
