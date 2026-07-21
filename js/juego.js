@@ -5,11 +5,13 @@ var errores = 0;
 var paresEncontrados = 0;
 var puntaje = 0;
 var nivelActualJuego = "";
+var nombreJugadorActualJuego = "";
 var totalParesJuego = 0;
 var tableroBloqueado = false;
 var segundosTranscurridos = 0;
 var identificadorTemporizador = null;
 var temporizadorIniciado = false;
+
 
 var cantidadIntentosElemento = document.getElementById(
     "cantidadIntentos"
@@ -28,6 +30,30 @@ var puntajeActualElemento = document.getElementById(
 );
 var tiempoPartidaElemento = document.getElementById(
     "tiempoPartida"
+);
+var modalResultado = document.getElementById(
+    "modalResultado"
+);
+var resultadoJugador = document.getElementById(
+    "resultadoJugador"
+);
+var resultadoNivel = document.getElementById(
+    "resultadoNivel"
+);
+var resultadoIntentos = document.getElementById(
+    "resultadoIntentos"
+);
+var resultadoErrores = document.getElementById(
+    "resultadoErrores"
+);
+var resultadoTiempo = document.getElementById(
+    "resultadoTiempo"
+);
+var resultadoPuntaje = document.getElementById(
+    "resultadoPuntaje"
+);
+var botonCerrarResultado = document.getElementById(
+    "botonCerrarResultado"
 );
 
 function obtenerPenalizacion(nivel) {
@@ -142,11 +168,66 @@ function limpiarCartasSeleccionadas() {
     tableroBloqueado = false;
 }
 
+function obtenerNombreNivelResultado(nivel) {
+    if (nivel === "facil") {
+        return "Fácil";
+    }
+
+    if (nivel === "medio") {
+        return "Medio";
+    }
+
+    if (nivel === "dificil") {
+        return "Difícil";
+    }
+
+    return "";
+}
+
+function calcularPuntajeFinal() {
+    puntaje = puntaje + 300;
+    puntaje = puntaje - segundosTranscurridos;
+
+    if (puntaje < 0) {
+        puntaje = 0;
+    }
+
+    actualizarEstadisticas();
+}
+
+function mostrarResultadoFinal() {
+    resultadoJugador.textContent =
+        nombreJugadorActualJuego;
+
+    resultadoNivel.textContent =
+        obtenerNombreNivelResultado(nivelActualJuego);
+
+    resultadoIntentos.textContent = intentos;
+    resultadoErrores.textContent = errores;
+
+    resultadoTiempo.textContent = formatearTiempo(
+        segundosTranscurridos
+    );
+
+    resultadoPuntaje.textContent = puntaje;
+
+    modalResultado.hidden = false;
+}
+
+function cerrarResultadoFinal() {
+    modalResultado.hidden = true;
+}
+
 function verificarFinPartida() {
     if (paresEncontrados === totalParesJuego) {
+        tableroBloqueado = true;
+
         detenerTemporizador();
+        calcularPuntajeFinal();
+        mostrarResultadoFinal();
     }
 }
+
 function procesarParejaCorrecta() {
     paresEncontrados++;
     puntaje = puntaje + 100;
@@ -166,6 +247,7 @@ function procesarParejaCorrecta() {
     limpiarCartasSeleccionadas();
     verificarFinPartida();
 }
+
 function ocultarCartasIncorrectas() {
     ocultarCarta(primeraCartaSeleccionada);
     ocultarCarta(segundaCartaSeleccionada);
@@ -318,6 +400,7 @@ function reiniciarSeleccionDeCartas() {
     segundaCartaSeleccionada = null;
     tableroBloqueado = false;
 }
+
 function formatearTiempo(segundos) {
     var minutos;
     var segundosRestantes;
@@ -383,7 +466,7 @@ function reiniciarTemporizador() {
     actualizarTemporizador();
 }
 
-function generarTablero(cartas, nivel) {
+function generarTablero(cartas, nivel , nombreJugador) {
     var tablero;
     var indice;
     var elementoCarta;
@@ -394,6 +477,9 @@ function generarTablero(cartas, nivel) {
     tablero.textContent = "";
 
     cantidadPares = cartas.length / 2;
+
+    nombreJugadorActualJuego = nombreJugador.trim();
+    modalResultado.hidden = true;
 
     reiniciarSeleccionDeCartas();
     reiniciarEstadisticas(nivel, cantidadPares);
@@ -408,3 +494,8 @@ function generarTablero(cartas, nivel) {
         tablero.appendChild(elementoCarta);
     }
 }
+
+botonCerrarResultado.addEventListener(
+    "click",
+    cerrarResultadoFinal
+);

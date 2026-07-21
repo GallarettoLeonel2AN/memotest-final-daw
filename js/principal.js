@@ -139,7 +139,8 @@ async function procesarFormularioInicio(evento) {
 
         generarTablero(
             cartasPreparadas,
-            nivelElegido
+            nivelElegido,
+            nombreIngresado
         );
 
         mostrarJuego(
