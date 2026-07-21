@@ -1,3 +1,7 @@
+var primeraCartaSeleccionada = null;
+var segundaCartaSeleccionada = null;
+var tableroBloqueado = false;
+
 function crearParesDeCartas(personajes) {
     var cartas;
     var indice;
@@ -60,6 +64,96 @@ function prepararCartas(personajes) {
     return cartas;
 }
 
+function revelarCarta(elementoCarta) {
+    elementoCarta.classList.add("cartaRevelada");
+}
+
+function ocultarCarta(elementoCarta) {
+    elementoCarta.classList.remove("cartaRevelada");
+}
+
+function limpiarCartasSeleccionadas() {
+    primeraCartaSeleccionada = null;
+    segundaCartaSeleccionada = null;
+    tableroBloqueado = false;
+}
+
+function procesarParejaCorrecta() {
+    primeraCartaSeleccionada.disabled = true;
+    segundaCartaSeleccionada.disabled = true;
+
+    primeraCartaSeleccionada.classList.add(
+        "cartaEmparejada"
+    );
+
+    segundaCartaSeleccionada.classList.add(
+        "cartaEmparejada"
+    );
+
+    limpiarCartasSeleccionadas();
+}
+
+function ocultarCartasIncorrectas() {
+    ocultarCarta(primeraCartaSeleccionada);
+    ocultarCarta(segundaCartaSeleccionada);
+
+    limpiarCartasSeleccionadas();
+}
+
+function procesarParejaIncorrecta() {
+    setTimeout(ocultarCartasIncorrectas, 1000);
+}
+
+function compararCartasSeleccionadas() {
+    var idPrimerPersonaje;
+    var idSegundoPersonaje;
+
+    idPrimerPersonaje =
+        primeraCartaSeleccionada.getAttribute(
+            "data-id-personaje"
+        );
+
+    idSegundoPersonaje =
+        segundaCartaSeleccionada.getAttribute(
+            "data-id-personaje"
+        );
+
+    if (idPrimerPersonaje === idSegundoPersonaje) {
+        procesarParejaCorrecta();
+
+        return;
+    }
+
+    procesarParejaIncorrecta();
+}
+
+function seleccionarCarta(evento) {
+    var cartaSeleccionada;
+
+    cartaSeleccionada = evento.currentTarget;
+
+    if (tableroBloqueado === true) {
+        return;
+    }
+
+    if (cartaSeleccionada === primeraCartaSeleccionada) {
+        return;
+    }
+
+    revelarCarta(cartaSeleccionada);
+
+    if (primeraCartaSeleccionada === null) {
+        primeraCartaSeleccionada = cartaSeleccionada;
+
+        return;
+    }
+
+    segundaCartaSeleccionada = cartaSeleccionada;
+    tableroBloqueado = true;
+
+    compararCartasSeleccionadas();
+}
+
 function crearElementoCarta(carta) {
     var elementoCarta;
     var reversoCarta;
@@ -98,6 +192,11 @@ function crearElementoCarta(carta) {
     elementoCarta.appendChild(imagenCarta);
     elementoCarta.appendChild(nombreCarta);
 
+    elementoCarta.addEventListener(
+        "click",
+        seleccionarCarta
+    );
+
     return elementoCarta;
 }
 
@@ -121,6 +220,12 @@ function asignarClaseTablero(tablero, nivel) {
     }
 }
 
+function reiniciarSeleccionDeCartas() {
+    primeraCartaSeleccionada = null;
+    segundaCartaSeleccionada = null;
+    tableroBloqueado = false;
+}
+
 function generarTablero(cartas, nivel) {
     var tablero;
     var indice;
@@ -130,6 +235,7 @@ function generarTablero(cartas, nivel) {
 
     tablero.textContent = "";
 
+    reiniciarSeleccionDeCartas();
     asignarClaseTablero(tablero, nivel);
 
     for (indice = 0; indice < cartas.length; indice++) {

@@ -342,6 +342,16 @@ body.partidaActiva #piePagina {
     color: rgb(20, 40, 65);
 }
 
+.carta:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.cartaEmparejada {
+    border-color: rgb(80, 220, 120);
+    background-color: rgb(255, 255, 255);
+}
+
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;
