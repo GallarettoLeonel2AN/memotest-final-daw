@@ -142,6 +142,11 @@ body {
 #botonIniciarPartida:hover {
     background-color: rgb(220, 65, 0);
 }
+#botonIniciarPartida:disabled {
+    border-color: rgb(170, 170, 170);
+    background-color: rgb(130, 130, 130);
+    cursor: not-allowed;
+}
 
 #piePagina {
     padding: 14px;
