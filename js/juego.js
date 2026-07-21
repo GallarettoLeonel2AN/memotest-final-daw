@@ -7,6 +7,9 @@ var puntaje = 0;
 var nivelActualJuego = "";
 var totalParesJuego = 0;
 var tableroBloqueado = false;
+var segundosTranscurridos = 0;
+var identificadorTemporizador = null;
+var temporizadorIniciado = false;
 
 var cantidadIntentosElemento = document.getElementById(
     "cantidadIntentos"
@@ -22,6 +25,9 @@ var cantidadTotalParesElemento = document.getElementById(
 );
 var puntajeActualElemento = document.getElementById(
     "puntajeActual"
+);
+var tiempoPartidaElemento = document.getElementById(
+    "tiempoPartida"
 );
 
 function obtenerPenalizacion(nivel) {
@@ -136,6 +142,11 @@ function limpiarCartasSeleccionadas() {
     tableroBloqueado = false;
 }
 
+function verificarFinPartida() {
+    if (paresEncontrados === totalParesJuego) {
+        detenerTemporizador();
+    }
+}
 function procesarParejaCorrecta() {
     paresEncontrados++;
     puntaje = puntaje + 100;
@@ -153,8 +164,8 @@ function procesarParejaCorrecta() {
 
     actualizarEstadisticas();
     limpiarCartasSeleccionadas();
+    verificarFinPartida();
 }
-
 function ocultarCartasIncorrectas() {
     ocultarCarta(primeraCartaSeleccionada);
     ocultarCarta(segundaCartaSeleccionada);
@@ -223,6 +234,8 @@ function seleccionarCarta(evento) {
     revelarCarta(cartaSeleccionada);
 
     if (primeraCartaSeleccionada === null) {
+        iniciarTemporizador();
+
         primeraCartaSeleccionada = cartaSeleccionada;
 
         return;
@@ -305,6 +318,70 @@ function reiniciarSeleccionDeCartas() {
     segundaCartaSeleccionada = null;
     tableroBloqueado = false;
 }
+function formatearTiempo(segundos) {
+    var minutos;
+    var segundosRestantes;
+    var minutosTexto;
+    var segundosTexto;
+
+    minutos = Math.floor(segundos / 60);
+    segundosRestantes = segundos % 60;
+
+    minutosTexto = minutos.toString();
+    segundosTexto = segundosRestantes.toString();
+
+    if (minutos < 10) {
+        minutosTexto = "0" + minutosTexto;
+    }
+
+    if (segundosRestantes < 10) {
+        segundosTexto = "0" + segundosTexto;
+    }
+
+    return minutosTexto + ":" + segundosTexto;
+}
+
+function actualizarTemporizador() {
+    tiempoPartidaElemento.textContent = formatearTiempo(
+        segundosTranscurridos
+    );
+}
+
+function aumentarTiempo() {
+    segundosTranscurridos++;
+
+    actualizarTemporizador();
+}
+
+function iniciarTemporizador() {
+    if (temporizadorIniciado === true) {
+        return;
+    }
+
+    temporizadorIniciado = true;
+
+    identificadorTemporizador = setInterval(
+        aumentarTiempo,
+        1000
+    );
+}
+
+function detenerTemporizador() {
+    if (identificadorTemporizador !== null) {
+        clearInterval(identificadorTemporizador);
+    }
+
+    identificadorTemporizador = null;
+    temporizadorIniciado = false;
+}
+
+function reiniciarTemporizador() {
+    detenerTemporizador();
+
+    segundosTranscurridos = 0;
+
+    actualizarTemporizador();
+}
 
 function generarTablero(cartas, nivel) {
     var tablero;
@@ -320,6 +397,7 @@ function generarTablero(cartas, nivel) {
 
     reiniciarSeleccionDeCartas();
     reiniciarEstadisticas(nivel, cantidadPares);
+    reiniciarTemporizador();
     asignarClaseTablero(tablero, nivel);
 
     for (indice = 0; indice < cartas.length; indice++) {

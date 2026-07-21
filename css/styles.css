@@ -503,4 +503,14 @@ body.partidaActiva #piePagina {
     .tableroDificil .reversoCarta {
         font-size: 22px;
     }
+    #panelEstadisticas {
+    gap: 5px;
+    }
+
+    .datoEstadistica {
+    min-width: 86px;
+    padding: 4px 6px;
+    font-size: 11px;
+    }
+    
 }
