@@ -9,6 +9,7 @@ var botonIniciarPartida = document.getElementById(
 );
 
 var personajesCargados = [];
+var cartasPreparadas = [];
 
 function limpiarMensajeInicio() {
     mensajeErrorInicio.textContent = "";
@@ -83,15 +84,19 @@ async function procesarFormularioInicio(evento) {
     bloquearBotonInicio();
 
     try {
-        personajesCargados = await obtenerPersonajes(
-            cantidadPersonajes
-        );
+    personajesCargados = await obtenerPersonajes(
+        cantidadPersonajes
+    );
 
-        mostrarMensajeInicio(
-            "Se cargaron " +
-            personajesCargados.length +
-            " personajes correctamente."
-        );
+    cartasPreparadas = prepararCartas(
+        personajesCargados
+    );
+
+    mostrarMensajeInicio(
+        "Se prepararon " +
+        cartasPreparadas.length +
+        " cartas correctamente."
+    );
     } catch (error) {
         mostrarMensajeInicio(error.message);
     }
