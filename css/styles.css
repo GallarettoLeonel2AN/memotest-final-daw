@@ -5,6 +5,10 @@
     font-weight: normal;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -167,6 +171,177 @@ body {
     text-align: center;
 }
 
+body.partidaActiva #encabezadoPrincipal {
+    gap: 2px;
+    padding: 10px 16px 4px;
+}
+
+body.partidaActiva #encabezadoPrincipal h1 {
+    font-size: 34px;
+}
+
+body.partidaActiva #encabezadoPrincipal p {
+    display: none;
+}
+
+body.partidaActiva #contenidoPrincipal {
+    align-items: flex-start;
+    padding: 6px 10px;
+}
+
+body.partidaActiva #piePagina {
+    padding: 6px;
+    font-size: 11px;
+}
+
+#seccionJuego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 4px;
+}
+
+#datosPartida {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+}
+
+#tituloJuego {
+    color: rgb(255, 177, 0);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 rgb(16, 65, 130),
+        3px 3px 0 rgba(0, 0, 0, 0.55);
+}
+
+#datosPartida p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#tableroJuego {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#tableroJuego.tableroFacil {
+    gap: 10px;
+    max-width: 430px;
+}
+
+#tableroJuego.tableroMedio {
+    gap: 8px;
+    max-width: 472px;
+}
+
+#tableroJuego.tableroDificil {
+    gap: 6px;
+    max-width: 462px;
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 3px solid rgb(255, 177, 0);
+    border-radius: 8px;
+    background-color: rgb(13, 59, 111);
+    color: rgb(255, 255, 255);
+}
+
+.tableroFacil .carta {
+    gap: 5px;
+    width: 100px;
+    height: 115px;
+    padding: 7px;
+}
+
+.tableroMedio .carta {
+    gap: 4px;
+    width: 88px;
+    height: 100px;
+    padding: 6px;
+}
+
+.tableroDificil .carta {
+    gap: 2px;
+    width: 72px;
+    height: 82px;
+    padding: 4px;
+    border-width: 2px;
+}
+
+.carta:hover {
+    background-color: rgb(19, 80, 145);
+}
+
+.reversoCarta {
+    color: rgb(255, 177, 0);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 44px;
+}
+
+.tableroDificil .reversoCarta {
+    font-size: 32px;
+}
+
+.imagenCarta {
+    display: none;
+    width: 100%;
+    height: 75px;
+    object-fit: contain;
+}
+
+.tableroMedio .imagenCarta {
+    height: 65px;
+}
+
+.tableroDificil .imagenCarta {
+    height: 52px;
+}
+
+.nombreCarta {
+    display: none;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tableroDificil .nombreCarta {
+    font-size: 8px;
+}
+
+.cartaRevelada {
+    background-color: rgb(255, 255, 255);
+}
+
+.cartaRevelada .reversoCarta {
+    display: none;
+}
+
+.cartaRevelada .imagenCarta,
+.cartaRevelada .nombreCarta {
+    display: block;
+}
+
+.cartaRevelada .nombreCarta {
+    color: rgb(20, 40, 65);
+}
+
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;
@@ -220,5 +395,79 @@ body {
 
     #piePagina {
         font-size: 12px;
+    }
+
+    body.partidaActiva #encabezadoPrincipal h1 {
+        font-size: 27px;
+    }
+
+    body.partidaActiva #contenidoPrincipal {
+        padding: 4px;
+    }
+
+    #seccionJuego {
+        gap: 6px;
+        padding: 2px;
+    }
+
+    #tituloJuego {
+        font-size: 22px;
+    }
+
+    #datosPartida p {
+        font-size: 12px;
+    }
+
+    #tableroJuego.tableroFacil {
+        gap: 6px;
+        max-width: 286px;
+    }
+
+    #tableroJuego.tableroMedio {
+        gap: 5px;
+        max-width: 271px;
+    }
+
+    #tableroJuego.tableroDificil {
+        gap: 3px;
+        max-width: 273px;
+    }
+
+    .tableroFacil .carta {
+        width: 67px;
+        height: 82px;
+        padding: 4px;
+    }
+
+    .tableroMedio .carta {
+        width: 64px;
+        height: 72px;
+        padding: 3px;
+    }
+
+    .tableroDificil .carta {
+        width: 43px;
+        height: 55px;
+        padding: 2px;
+    }
+
+    .tableroFacil .imagenCarta {
+        height: 54px;
+    }
+
+    .tableroMedio .imagenCarta {
+        height: 46px;
+    }
+
+    .tableroDificil .imagenCarta {
+        height: 35px;
+    }
+
+    .tableroDificil .nombreCarta {
+        font-size: 6px;
+    }
+
+    .tableroDificil .reversoCarta {
+        font-size: 22px;
     }
 }

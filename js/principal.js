@@ -1,14 +1,33 @@
-var formularioInicio = document.getElementById("formularioInicio");
-var nombreJugador = document.getElementById("nombreJugador");
-var nivelDificultad = document.getElementById("nivelDificultad");
+var formularioInicio = document.getElementById(
+    "formularioInicio"
+);
+var nombreJugador = document.getElementById(
+    "nombreJugador"
+);
+var nivelDificultad = document.getElementById(
+    "nivelDificultad"
+);
 var mensajeErrorInicio = document.getElementById(
     "mensajeErrorInicio"
 );
 var botonIniciarPartida = document.getElementById(
     "botonIniciarPartida"
 );
+var inicioPartida = document.getElementById(
+    "inicioPartida"
+);
+var seccionJuego = document.getElementById(
+    "seccionJuego"
+);
+var jugadorActual = document.getElementById(
+    "jugadorActual"
+);
+var nivelActual = document.getElementById(
+    "nivelActual"
+);
 
 var personajesCargados = [];
+var cartasPreparadas = [];
 
 function limpiarMensajeInicio() {
     mensajeErrorInicio.textContent = "";
@@ -20,12 +39,14 @@ function mostrarMensajeInicio(mensaje) {
 
 function bloquearBotonInicio() {
     botonIniciarPartida.disabled = true;
-    botonIniciarPartida.textContent = "Cargando personajes...";
+    botonIniciarPartida.textContent =
+        "Cargando personajes...";
 }
 
 function restaurarBotonInicio() {
     botonIniciarPartida.disabled = false;
-    botonIniciarPartida.textContent = "Comenzar partida";
+    botonIniciarPartida.textContent =
+        "Comenzar partida";
 }
 
 function obtenerCantidadPersonajes(nivel) {
@@ -42,6 +63,31 @@ function obtenerCantidadPersonajes(nivel) {
     }
 
     return 0;
+}
+
+function obtenerNombreNivel(nivel) {
+    if (nivel === "facil") {
+        return "Fácil";
+    }
+
+    if (nivel === "medio") {
+        return "Medio";
+    }
+
+    if (nivel === "dificil") {
+        return "Difícil";
+    }
+
+    return "";
+}
+
+function mostrarJuego(nombre, nivel) {
+    jugadorActual.textContent = nombre.trim();
+    nivelActual.textContent = obtenerNombreNivel(nivel);
+
+    inicioPartida.hidden = true;
+    seccionJuego.hidden = false;
+    document.body.classList.add("partidaActiva");
 }
 
 async function procesarFormularioInicio(evento) {
@@ -87,10 +133,18 @@ async function procesarFormularioInicio(evento) {
             cantidadPersonajes
         );
 
-        mostrarMensajeInicio(
-            "Se cargaron " +
-            personajesCargados.length +
-            " personajes correctamente."
+        cartasPreparadas = prepararCartas(
+            personajesCargados
+        );
+
+        generarTablero(
+            cartasPreparadas,
+            nivelElegido
+        );
+
+        mostrarJuego(
+            nombreIngresado,
+            nivelElegido
         );
     } catch (error) {
         mostrarMensajeInicio(error.message);
