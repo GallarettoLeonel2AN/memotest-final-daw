@@ -342,6 +342,111 @@ body.partidaActiva #piePagina {
     color: rgb(20, 40, 65);
 }
 
+.carta:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.cartaEmparejada {
+    border-color: rgb(80, 220, 120);
+    background-color: rgb(255, 255, 255);
+}
+
+#panelEstadisticas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.datoEstadistica {
+    min-width: 100px;
+    padding: 6px 10px;
+    border: 1px solid rgb(255, 177, 0);
+    border-radius: 8px;
+    background-color: rgba(6, 35, 67, 0.9);
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.datoEstadistica span {
+    color: rgb(255, 177, 0);
+}
+
+#modalResultado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+#contenidoModalResultado {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 430px;
+    padding: 32px;
+    border: 3px solid rgb(255, 177, 0);
+    border-radius: 16px;
+    background-color: rgb(6, 35, 67);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+}
+
+#contenidoModalResultado h2 {
+    color: rgb(255, 177, 0);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 34px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgb(16, 65, 130);
+}
+
+#datosResultado {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#datosResultado p {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(80, 105, 130);
+    font-weight: bold;
+}
+
+#datosResultado span {
+    color: rgb(255, 177, 0);
+}
+
+#botonCerrarResultado {
+    padding: 12px;
+    border: 3px solid rgb(255, 190, 0);
+    border-radius: 8px;
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 20px;
+}
+
+#botonCerrarResultado:hover {
+    background-color: rgb(220, 65, 0);
+}
+
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;
@@ -470,4 +575,25 @@ body.partidaActiva #piePagina {
     .tableroDificil .reversoCarta {
         font-size: 22px;
     }
+    #panelEstadisticas {
+    gap: 5px;
+    }
+
+    .datoEstadistica {
+    min-width: 86px;
+    padding: 4px 6px;
+    font-size: 11px;
+    }
+    #contenidoModalResultado {
+    padding: 24px 20px;
+}
+
+    #contenidoModalResultado h2 {
+        font-size: 28px;
+    }
+
+    #datosResultado p {
+        font-size: 14px;
+    }
+    
 }
