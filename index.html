@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Juego de memoria basado en personajes de Dragon Ball"
+    >
+    <title>Dragon Ball Memotest</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezadoPrincipal">
+        <h1>Dragon Ball Memotest</h1>
+
+        <p>
+            Encontrá todos los pares de personajes en el menor tiempo posible.
+        </p>
+    </header>
+
+    <main id="contenidoPrincipal">
+        <section
+            id="inicioPartida"
+        >
+            <h2 id="tituloInicioPartida">Prepará tu partida</h2>
+
+            <p>
+                Ingresá tu nombre y seleccioná una dificultad para comenzar.
+            </p>
+
+            <form id="formularioInicio">
+                <div class="grupoCampo">
+                    <label for="nombreJugador">
+                        Nombre del jugador
+                    </label>
+
+                    <input
+                        id="nombreJugador"
+                        name="nombreJugador"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="Ingresá tu nombre"
+                    >
+                </div>
+
+                <div class="grupoCampo">
+                    <label for="nivelDificultad">
+                        Nivel de dificultad
+                    </label>
+
+                    <select
+                        id="nivelDificultad"
+                        name="nivelDificultad"
+                    >
+                        <option value="">
+                            Seleccioná un nivel
+                        </option>
+
+                        <option value="facil">
+                            Fácil - 16 cartas
+                        </option>
+
+                        <option value="medio">
+                            Medio - 20 cartas
+                        </option>
+
+                        <option value="dificil">
+                            Difícil - 36 cartas
+                        </option>
+                    </select>
+                </div>
+
+                <p
+                    id="mensajeErrorInicio"
+                    class="mensajeError"
+                ></p>
+
+                <button
+                    id="botonIniciarPartida"
+                    type="submit"
+                >
+                    Comenzar partida
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="piePagina">
+        <p>Desarrollado con ❤ por Sosa Ulises, Terrazzino Franco y Gallaretto Leonel</p>
+    </footer>
+    <script src="js/validaciones.js"></script>
+    <script src="js/api-dragon-ball.js"></script>
+    <script src="js/principal.js"></script>
+</body>
+</body>
+</html>
