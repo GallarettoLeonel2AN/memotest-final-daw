@@ -1,6 +1,8 @@
 @font-face {
-    font-family: "Saiyan Sans";
-    src: url("/assets/fonts/saiyan-sans.ttf");
+    font-family: "FuenteDragonBall";
+    src: url("../assets/fonts/saiyan-sans.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
 
 body {
@@ -32,7 +34,7 @@ body {
 
 #encabezadoPrincipal h1 {
     color: rgb(255, 177, 0);
-    font-family: "Saiyan Sans", Arial, sans-serif;
+    font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 58px;
     font-weight: normal;
@@ -71,7 +73,7 @@ body {
 
 #inicioPartida h2 {
     color: rgb(255, 177, 0);
-    font-family: "Saiyan Sans", Arial, sans-serif;
+    font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 38px;
     font-weight: normal;
@@ -139,7 +141,7 @@ body {
     border-radius: 9px;
     background-color: rgb(255, 105, 0);
     color: rgb(255, 255, 255);
-    font-family: "Saiyan Sans", Arial, sans-serif;
+    font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 23px;
     font-weight: normal;
