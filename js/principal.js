@@ -87,6 +87,7 @@ function mostrarJuego(nombre, nivel) {
 
     inicioPartida.hidden = true;
     seccionJuego.hidden = false;
+    document.body.classList.add("partidaActiva");
 }
 
 async function procesarFormularioInicio(evento) {
