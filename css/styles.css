@@ -352,6 +352,29 @@ body.partidaActiva #piePagina {
     background-color: rgb(255, 255, 255);
 }
 
+#panelEstadisticas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.datoEstadistica {
+    min-width: 100px;
+    padding: 6px 10px;
+    border: 1px solid rgb(255, 177, 0);
+    border-radius: 8px;
+    background-color: rgba(6, 35, 67, 0.9);
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.datoEstadistica span {
+    color: rgb(255, 177, 0);
+}
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;

@@ -1,7 +1,65 @@
 var primeraCartaSeleccionada = null;
 var segundaCartaSeleccionada = null;
+var intentos = 0;
+var errores = 0;
+var paresEncontrados = 0;
+var puntaje = 0;
+var nivelActualJuego = "";
+var totalParesJuego = 0;
 var tableroBloqueado = false;
 
+var cantidadIntentosElemento = document.getElementById(
+    "cantidadIntentos"
+);
+var cantidadErroresElemento = document.getElementById(
+    "cantidadErrores"
+);
+var cantidadParesEncontradosElemento = document.getElementById(
+    "cantidadParesEncontrados"
+);
+var cantidadTotalParesElemento = document.getElementById(
+    "cantidadTotalPares"
+);
+var puntajeActualElemento = document.getElementById(
+    "puntajeActual"
+);
+
+function obtenerPenalizacion(nivel) {
+    if (nivel === "facil") {
+        return 10;
+    }
+
+    if (nivel === "medio") {
+        return 20;
+    }
+
+    if (nivel === "dificil") {
+        return 30;
+    }
+
+    return 0;
+}
+
+function actualizarEstadisticas() {
+    cantidadIntentosElemento.textContent = intentos;
+    cantidadErroresElemento.textContent = errores;
+    cantidadParesEncontradosElemento.textContent =
+        paresEncontrados;
+    cantidadTotalParesElemento.textContent =
+        totalParesJuego;
+    puntajeActualElemento.textContent = puntaje;
+}
+
+function reiniciarEstadisticas(nivel, totalPares) {
+    intentos = 0;
+    errores = 0;
+    paresEncontrados = 0;
+    puntaje = 0;
+    nivelActualJuego = nivel;
+    totalParesJuego = totalPares;
+
+    actualizarEstadisticas();
+}
 function crearParesDeCartas(personajes) {
     var cartas;
     var indice;
@@ -79,6 +137,9 @@ function limpiarCartasSeleccionadas() {
 }
 
 function procesarParejaCorrecta() {
+    paresEncontrados++;
+    puntaje = puntaje + 100;
+
     primeraCartaSeleccionada.disabled = true;
     segundaCartaSeleccionada.disabled = true;
 
@@ -90,6 +151,7 @@ function procesarParejaCorrecta() {
         "cartaEmparejada"
     );
 
+    actualizarEstadisticas();
     limpiarCartasSeleccionadas();
 }
 
@@ -101,12 +163,30 @@ function ocultarCartasIncorrectas() {
 }
 
 function procesarParejaIncorrecta() {
+    var penalizacion;
+
+    errores++;
+
+    penalizacion = obtenerPenalizacion(
+        nivelActualJuego
+    );
+
+    puntaje = puntaje - penalizacion;
+
+    if (puntaje < 0) {
+        puntaje = 0;
+    }
+
+    actualizarEstadisticas();
+
     setTimeout(ocultarCartasIncorrectas, 1000);
 }
 
 function compararCartasSeleccionadas() {
     var idPrimerPersonaje;
     var idSegundoPersonaje;
+
+    intentos++;
 
     idPrimerPersonaje =
         primeraCartaSeleccionada.getAttribute(
@@ -230,12 +310,16 @@ function generarTablero(cartas, nivel) {
     var tablero;
     var indice;
     var elementoCarta;
+    var cantidadPares;
 
     tablero = document.getElementById("tableroJuego");
 
     tablero.textContent = "";
 
+    cantidadPares = cartas.length / 2;
+
     reiniciarSeleccionDeCartas();
+    reiniciarEstadisticas(nivel, cantidadPares);
     asignarClaseTablero(tablero, nivel);
 
     for (indice = 0; indice < cartas.length; indice++) {
