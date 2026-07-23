@@ -194,6 +194,10 @@ body.partidaActiva #piePagina {
     font-size: 11px;
 }
 
+body.partidaActiva #navegacionPrincipal {
+    display: none;
+}
+
 #seccionJuego {
     display: flex;
     flex-direction: column;
@@ -592,6 +596,41 @@ body.partidaActiva #piePagina {
     background-color: rgb(220, 65, 0);
 }
 
+#navegacionPrincipal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.listaNavegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.enlaceNavegacion {
+    display: block;
+    padding: 8px 14px;
+    border: 2px solid rgb(255, 177, 0);
+    border-radius: 8px;
+    background-color: rgba(6, 35, 67, 0.9);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.enlaceNavegacion:hover {
+    background-color: rgb(255, 105, 0);
+}
+
+.enlaceActivo {
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+}
+
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;
@@ -764,5 +803,14 @@ body.partidaActiva #piePagina {
 
     #seccionContacto h2 {
         font-size: 30px;
+    }
+
+    .listaNavegacion {
+        gap: 6px;
+    }
+
+    .enlaceNavegacion {
+        padding: 6px 9px;
+        font-size: 12px;
     }
 }
