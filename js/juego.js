@@ -52,8 +52,8 @@ var resultadoTiempo = document.getElementById(
 var resultadoPuntaje = document.getElementById(
     "resultadoPuntaje"
 );
-var botonCerrarResultado = document.getElementById(
-    "botonCerrarResultado"
+var botonJugarDeNuevo = document.getElementById(
+    "botonJugarDeNuevo"
 );
 
 function obtenerPenalizacion(nivel) {
@@ -212,10 +212,6 @@ function mostrarResultadoFinal() {
     resultadoPuntaje.textContent = puntaje;
 
     modalResultado.hidden = false;
-}
-
-function cerrarResultadoFinal() {
-    modalResultado.hidden = true;
 }
 
 function verificarFinPartida() {
@@ -476,6 +472,8 @@ function generarTablero(cartas, nivel , nombreJugador) {
 
     tablero.textContent = "";
 
+    cartasJuegoActual = cartas.slice();
+
     cantidadPares = cartas.length / 2;
 
     nombreJugadorActualJuego = nombreJugador.trim();
@@ -495,7 +493,38 @@ function generarTablero(cartas, nivel , nombreJugador) {
     }
 }
 
-botonCerrarResultado.addEventListener(
+function reiniciarPartidaActual() {
+    var cartasMezcladas;
+
+    cartasMezcladas = mezclarCartas(
+        cartasJuegoActual.slice()
+    );
+
+    generarTablero(
+        cartasMezcladas,
+        nivelActualJuego,
+        nombreJugadorActualJuego
+    );
+}
+
+function limpiarPartidaActual() {
+    var tablero;
+
+    tablero = document.getElementById("tableroJuego");
+
+    reiniciarSeleccionDeCartas();
+    reiniciarEstadisticas("", 0);
+    reiniciarTemporizador();
+
+    cartasJuegoActual = [];
+    nombreJugadorActualJuego = "";
+
+    tablero.textContent = "";
+    modalResultado.hidden = true;
+}
+
+
+botonJugarDeNuevo.addEventListener(
     "click",
-    cerrarResultadoFinal
+    reiniciarPartidaActual
 );

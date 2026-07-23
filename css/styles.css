@@ -433,18 +433,35 @@ body.partidaActiva #piePagina {
     color: rgb(255, 177, 0);
 }
 
-#botonCerrarResultado {
+#accionesResultado {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botonModalResultado {
     padding: 12px;
     border: 3px solid rgb(255, 190, 0);
     border-radius: 8px;
-    background-color: rgb(255, 105, 0);
     color: rgb(255, 255, 255);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 20px;
 }
 
-#botonCerrarResultado:hover {
+#botonJugarDeNuevo {
+    background-color: rgb(255, 105, 0);
+}
+
+#botonJugarDeNuevo:hover {
     background-color: rgb(220, 65, 0);
+}
+
+#botonCambiarDatos {
+    background-color: rgb(16, 65, 130);
+}
+
+#botonCambiarDatos:hover {
+    background-color: rgb(10, 45, 95);
 }
 
 @media (max-width: 600px) {
