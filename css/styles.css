@@ -12,7 +12,10 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
     background-color: rgb(8, 28, 48);
     background-image:
         linear-gradient(
@@ -32,7 +35,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    padding: 28px 16px 10px;
+    padding: 20px 16px 0;
     text-align: center;
 }
 
@@ -40,77 +43,107 @@ body {
     color: rgb(255, 177, 0);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
-    font-size: 58px;
+    font-size: 68px;
     font-weight: normal;
-    letter-spacing: 3px;
+    line-height: 0.95;
+    letter-spacing: 2px;
     text-shadow:
-        3px 3px 0 rgb(16, 65, 130),
-        5px 5px 0 rgba(0, 0, 0, 0.55);
+        2px 2px 0 rgb(255, 238, 120),
+        5px 5px 0 rgb(16, 65, 130),
+        8px 8px 0 rgba(0, 0, 0, 0.62),
+        0 0 18px rgba(255, 130, 0, 0.55);
 }
 
 #encabezadoPrincipal p {
-    font-size: 18px;
+    max-width: 560px;
+    color: rgb(255, 245, 220);
+    font-size: 17px;
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    line-height: 1.35;
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.7),
+        0 0 10px rgba(255, 120, 0, 0.35);
 }
 
 #contenidoPrincipal {
     display: flex;
-    flex: 1;
+    flex: 0 1 auto;
     justify-content: center;
-    align-items: center;
-    padding: 24px 16px 36px;
+    align-items: flex-start;
+    width: 100%;
+    padding: 8px 16px 0;
 }
 
 #inicioPartida {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     width: 100%;
     max-width: 520px;
+    min-height: 430px;
     padding: 38px;
     border: 3px solid rgb(255, 150, 0);
-    border-radius: 18px;
+    border-radius: 8px;
     background-color: rgba(6, 35, 67, 0.94);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+    background-image:
+        linear-gradient(
+            rgba(12, 58, 108, 0.96),
+            rgba(4, 26, 55, 0.96)
+        );
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.12),
+        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
+        0 12px 32px rgba(0, 0, 0, 0.58);
 }
 
 #inicioPartida h2 {
-    color: rgb(255, 177, 0);
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    color: rgb(255, 220, 70);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 38px;
     font-weight: normal;
     letter-spacing: 2px;
     text-align: center;
-    text-shadow: 2px 2px 0 rgb(16, 65, 130);
+    text-shadow:
+        2px 2px 0 rgb(16, 65, 130),
+        4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 #inicioPartida > p {
     max-width: 390px;
     margin: 0 auto;
-    color: rgb(238, 243, 248);
+    color: rgb(255, 245, 220);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 800;
+    line-height: 1.35;
     text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.65);
 }
 
 #formularioInicio {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 }
 
 .grupoCampo {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .grupoCampo label {
-    color: rgb(255, 255, 255);
-    font-size: 16px;
+    color: rgb(238, 243, 248);
+    font-size: 15px;
     font-weight: 800;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.55);
 }
 
 .grupoCampo input,
@@ -118,48 +151,117 @@ body {
     width: 100%;
     padding: 14px;
     border: 2px solid rgb(185, 198, 212);
-    border-radius: 9px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(30, 30, 30);
-    font-family: "Bangers", Arial, sans-serif;
+    border-radius: 6px;
+    background-color: rgb(246, 249, 252);
+    color: rgb(25, 35, 48);
+    font-family: "Nunito", Arial, sans-serif;
     font-size: 16px;
+    font-weight: 700;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.08),
+        0 4px 8px rgba(0, 0, 0, 0.18);
+    transition:
+        border-color 0.18s,
+        box-shadow 0.18s,
+        background-color 0.18s;
+}
+
+.grupoCampo input::placeholder {
+    color: rgb(96, 105, 116);
+    font-weight: 700;
 }
 
 .grupoCampo input:focus,
 .grupoCampo select:focus {
     border-color: rgb(255, 150, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.06),
+        0 0 0 3px rgba(255, 150, 0, 0.22);
     outline: none;
 }
 
 .mensajeError {
     min-height: 20px;
-    color: rgb(255, 210, 70);
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: rgb(255, 230, 150);
     font-size: 14px;
     font-weight: 800;
     text-align: center;
 }
 
+.mensajeError:not(:empty) {
+    padding: 8px 10px;
+    border-color: rgba(255, 105, 0, 0.82);
+    background-color: rgba(95, 18, 12, 0.72);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 10px rgba(0, 0, 0, 0.28);
+}
+
 #botonIniciarPartida {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 13px;
     border: 3px solid rgb(255, 190, 0);
-    border-radius: 9px;
+    border-radius: 7px;
     background-color: rgb(255, 105, 0);
+    background-image:
+        linear-gradient(
+            rgb(255, 146, 0),
+            rgb(225, 70, 0)
+        );
     color: rgb(255, 255, 255);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 23px;
     font-weight: normal;
     letter-spacing: 1px;
-    transition: background-color 0.3s;
+    text-shadow: 2px 2px 0 rgba(90, 20, 0, 0.65);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.22),
+        0 6px 0 rgb(145, 38, 0),
+        0 10px 18px rgba(0, 0, 0, 0.42);
+    transition:
+        transform 0.18s,
+        box-shadow 0.18s,
+        border-color 0.18s,
+        filter 0.18s;
 }
 
 #botonIniciarPartida:hover {
-    background-color: rgb(220, 65, 0);
+    border-color: rgb(255, 232, 95);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.24),
+        0 8px 0 rgb(145, 38, 0),
+        0 14px 24px rgba(0, 0, 0, 0.48);
+}
+
+#botonIniciarPartida:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.18),
+        0 3px 0 rgb(145, 38, 0),
+        0 7px 12px rgba(0, 0, 0, 0.42);
+}
+
+#botonIniciarPartida:focus-visible {
+    outline: 3px solid rgb(255, 235, 120);
+    outline-offset: 3px;
 }
 #botonIniciarPartida:disabled {
     border-color: rgb(170, 170, 170);
     background-color: rgb(130, 130, 130);
+    background-image: none;
+    box-shadow: none;
     cursor: not-allowed;
+    filter: none;
+    transform: none;
 }
 
 #piePagina {
@@ -172,12 +274,19 @@ body {
 }
 
 body.partidaActiva #encabezadoPrincipal {
-    gap: 2px;
-    padding: 10px 16px 4px;
+    gap: 0;
+    padding: 12px 16px 2px;
 }
 
 body.partidaActiva #encabezadoPrincipal h1 {
-    font-size: 34px;
+    font-size: 46px;
+    line-height: 0.95;
+    letter-spacing: 2px;
+    text-shadow:
+        2px 2px 0 rgb(255, 238, 120),
+        5px 5px 0 rgb(16, 65, 130),
+        8px 8px 0 rgba(0, 0, 0, 0.62),
+        0 0 18px rgba(255, 130, 0, 0.55);
 }
 
 body.partidaActiva #encabezadoPrincipal p {
@@ -185,8 +294,13 @@ body.partidaActiva #encabezadoPrincipal p {
 }
 
 body.partidaActiva #contenidoPrincipal {
+    flex: 0 1 auto;
     align-items: flex-start;
-    padding: 6px 10px;
+    padding: 0 10px 10px;
+}
+
+body.partidaActiva {
+    justify-content: center;
 }
 
 body.partidaActiva #piePagina {
@@ -202,8 +316,10 @@ body.partidaActiva #navegacionPrincipal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
     width: 100%;
+    max-height: 100%;
     padding: 4px;
 }
 
@@ -211,51 +327,59 @@ body.partidaActiva #navegacionPrincipal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 0;
+    padding: 4px 16px;
     text-align: center;
 }
 
 #tituloJuego {
-    color: rgb(255, 177, 0);
-    font-family: "FuenteDragonBall", Arial, sans-serif;
-    font-size: 28px;
-    font-weight: normal;
-    letter-spacing: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    color: rgb(255, 245, 220);
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 0;
     text-shadow:
-        2px 2px 0 rgb(16, 65, 130),
-        3px 3px 0 rgba(0, 0, 0, 0.55);
+        1px 1px 0 rgba(0, 0, 0, 0.8),
+        0 0 8px rgba(255, 150, 0, 0.25);
 }
 
-#datosPartida p {
-    font-size: 14px;
-    font-weight: bold;
+#nivelActual {
+    color: rgb(255, 220, 70);
 }
 
 #tableroJuego {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     width: 100%;
     margin: 0 auto;
 }
 
 #tableroJuego.tableroFacil {
-    gap: 10px;
-    max-width: 430px;
+    gap: 12px;
+    max-width: 590px;
 }
 
 #tableroJuego.tableroMedio {
-    gap: 8px;
-    max-width: 472px;
+    gap: 10px;
+    max-width: 600px;
 }
 
 #tableroJuego.tableroDificil {
-    gap: 6px;
-    max-width: 462px;
+    gap: 8px;
+    max-width: 600px;
 }
 
 .carta {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -263,39 +387,89 @@ body.partidaActiva #navegacionPrincipal {
     border: 3px solid rgb(255, 177, 0);
     border-radius: 8px;
     background-color: rgb(13, 59, 111);
+    background-image:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255, 185, 0, 0.95) 0%,
+            rgba(255, 105, 0, 0.95) 42%,
+            rgba(170, 40, 0, 0.98) 76%
+        );
     color: rgb(255, 255, 255);
+    box-shadow:
+        inset 0 -10px 0 rgba(90, 20, 0, 0.35),
+        0 6px 14px rgba(0, 0, 0, 0.45);
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s,
+        background-color 0.2s;
+}
+
+.carta:not(.cartaRevelada):not(.cartaEmparejada)::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-image:
+        radial-gradient(
+            circle at 32% 25%,
+            rgba(255, 255, 255, 0.85) 0%,
+            rgba(255, 255, 255, 0.7) 9%,
+            transparent 10%
+        ),
+        radial-gradient(
+            circle,
+            rgb(255, 220, 70) 0%,
+            rgb(255, 145, 0) 52%,
+            rgb(215, 58, 0) 100%
+        );
+    box-shadow:
+        inset -8px -10px 0 rgba(120, 30, 0, 0.32),
+        0 0 18px rgba(255, 177, 0, 0.5);
 }
 
 .tableroFacil .carta {
     gap: 5px;
-    width: 100px;
-    height: 115px;
+    width: clamp(104px, 12vmin, 135px);
+    height: clamp(120px, 14vmin, 154px);
     padding: 7px;
 }
 
 .tableroMedio .carta {
     gap: 4px;
-    width: 88px;
-    height: 100px;
+    width: clamp(88px, 10.5vmin, 112px);
+    height: clamp(100px, 11.8vmin, 128px);
     padding: 6px;
 }
 
 .tableroDificil .carta {
     gap: 2px;
-    width: 72px;
-    height: 82px;
+    width: clamp(66px, 8.8vmin, 90px);
+    height: clamp(76px, 10vmin, 102px);
     padding: 4px;
     border-width: 2px;
 }
 
-.carta:hover {
-    background-color: rgb(19, 80, 145);
+.carta:not(.cartaRevelada):not(.cartaEmparejada):hover {
+    border-color: rgb(255, 230, 90);
+    box-shadow:
+        inset 0 -10px 0 rgba(90, 20, 0, 0.25),
+        0 0 18px rgba(255, 177, 0, 0.75),
+        0 8px 16px rgba(0, 0, 0, 0.48);
+    transform: translateY(-2px);
 }
 
 .reversoCarta {
-    color: rgb(255, 177, 0);
+    position: relative;
+    z-index: 1;
+    color: rgb(155, 25, 10);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 44px;
+    line-height: 1;
+    text-shadow:
+        1px 1px 0 rgb(255, 235, 120),
+        3px 3px 0 rgba(80, 15, 0, 0.4);
 }
 
 .tableroDificil .reversoCarta {
@@ -305,16 +479,17 @@ body.partidaActiva #navegacionPrincipal {
 .imagenCarta {
     display: none;
     width: 100%;
-    height: 75px;
+    height: 68%;
     object-fit: contain;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
 }
 
 .tableroMedio .imagenCarta {
-    height: 65px;
+    height: 66%;
 }
 
 .tableroDificil .imagenCarta {
-    height: 52px;
+    height: 64%;
 }
 
 .nombreCarta {
@@ -330,7 +505,18 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .cartaRevelada {
-    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 230, 90);
+    background-color: rgb(255, 246, 205);
+    background-image:
+        linear-gradient(
+            rgb(255, 252, 232),
+            rgb(255, 228, 128)
+        );
+    box-shadow:
+        inset 0 0 0 2px rgba(255, 145, 0, 0.42),
+        0 0 14px rgba(255, 177, 0, 0.5),
+        0 6px 14px rgba(0, 0, 0, 0.42);
+    transform: none;
 }
 
 .cartaRevelada .reversoCarta {
@@ -343,7 +529,12 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .cartaRevelada .nombreCarta {
+    width: 100%;
+    min-height: 18px;
+    padding-top: 3px;
+    border-top: 1px solid rgba(210, 90, 0, 0.45);
     color: rgb(20, 40, 65);
+    text-shadow: none;
 }
 
 .carta:disabled {
@@ -353,31 +544,66 @@ body.partidaActiva #navegacionPrincipal {
 
 .cartaEmparejada {
     border-color: rgb(80, 220, 120);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(232, 255, 238);
+    background-image:
+        linear-gradient(
+            rgb(255, 255, 245),
+            rgb(218, 255, 228)
+        );
+    box-shadow:
+        inset 0 0 0 2px rgba(80, 220, 120, 0.38),
+        0 0 16px rgba(80, 220, 120, 0.65),
+        0 6px 14px rgba(0, 0, 0, 0.36);
+    transform: none;
 }
 
 #panelEstadisticas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 8px;
     width: 100%;
+    max-width: 760px;
+    padding: 8px 10px;
+    border-top: 2px solid rgba(255, 177, 0, 0.75);
+    border-bottom: 2px solid rgba(255, 177, 0, 0.75);
+    background-color: rgba(3, 18, 34, 0.78);
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .datoEstadistica {
-    min-width: 100px;
-    padding: 6px 10px;
-    border: 1px solid rgb(255, 177, 0);
-    border-radius: 8px;
-    background-color: rgba(6, 35, 67, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    min-width: 112px;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 190, 0, 0.9);
+    border-radius: 6px;
+    background-image:
+        linear-gradient(
+            rgb(18, 76, 138),
+            rgb(7, 39, 78)
+        );
     color: rgb(255, 255, 255);
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 800;
     text-align: center;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 4px 8px rgba(0, 0, 0, 0.32);
 }
 
 .datoEstadistica span {
-    color: rgb(255, 177, 0);
+    min-width: 24px;
+    color: rgb(255, 220, 70);
+    font-size: 15px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
 }
 
 #modalResultado {
@@ -402,9 +628,17 @@ body.partidaActiva #navegacionPrincipal {
     max-width: 430px;
     padding: 32px;
     border: 3px solid rgb(255, 177, 0);
-    border-radius: 16px;
+    border-radius: 8px;
     background-color: rgb(6, 35, 67);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    background-image:
+        linear-gradient(
+            rgb(12, 58, 108),
+            rgb(4, 26, 55)
+        );
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.12),
+        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
+        0 12px 32px rgba(0, 0, 0, 0.6);
     color: rgb(255, 255, 255);
 }
 
@@ -444,28 +678,73 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .botonModalResultado {
-    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    padding: 13px 16px;
     border: 3px solid rgb(255, 190, 0);
-    border-radius: 8px;
+    border-radius: 7px;
     color: rgb(255, 255, 255);
-    font-family: "FuenteDragonBall", Arial, sans-serif;
-    font-size: 20px;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.62);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.18),
+        0 5px 0 rgba(0, 0, 0, 0.35),
+        0 9px 16px rgba(0, 0, 0, 0.42);
+    transition:
+        transform 0.18s,
+        box-shadow 0.18s,
+        border-color 0.18s,
+        filter 0.18s;
 }
 
 #botonJugarDeNuevo {
     background-color: rgb(255, 105, 0);
+    background-image:
+        linear-gradient(
+            rgb(255, 146, 0),
+            rgb(225, 70, 0)
+        );
 }
 
 #botonJugarDeNuevo:hover {
-    background-color: rgb(220, 65, 0);
+    border-color: rgb(255, 232, 95);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
 }
 
 #botonCambiarDatos {
     background-color: rgb(16, 65, 130);
+    background-image:
+        linear-gradient(
+            rgb(25, 89, 168),
+            rgb(9, 45, 98)
+        );
 }
 
 #botonCambiarDatos:hover {
-    background-color: rgb(10, 45, 95);
+    border-color: rgb(255, 220, 70);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+}
+
+.botonModalResultado:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.14),
+        0 2px 0 rgba(0, 0, 0, 0.38),
+        0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.botonModalResultado:focus-visible {
+    outline: 3px solid rgb(255, 235, 120);
+    outline-offset: 3px;
 }
 
 #accionesPartida {
@@ -476,206 +755,592 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .botonAccionPartida {
-    padding: 7px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 38px;
+    padding: 8px 14px;
     border: 2px solid rgb(255, 190, 0);
-    border-radius: 7px;
+    border-radius: 6px;
     color: rgb(255, 255, 255);
-    font-family: "FuenteDragonBall", Arial, sans-serif;
-    font-size: 15px;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.55);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        0 4px 0 rgba(0, 0, 0, 0.32),
+        0 7px 12px rgba(0, 0, 0, 0.34);
+    transition:
+        transform 0.18s,
+        box-shadow 0.18s,
+        border-color 0.18s,
+        filter 0.18s;
 }
 
 #botonReiniciarPartida {
     background-color: rgb(255, 105, 0);
+    background-image:
+        linear-gradient(
+            rgb(255, 136, 0),
+            rgb(218, 66, 0)
+        );
 }
 
 #botonReiniciarPartida:hover {
-    background-color: rgb(220, 65, 0);
+    border-color: rgb(255, 232, 95);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
 }
 
 #botonVolverInicio {
     background-color: rgb(16, 65, 130);
+    background-image:
+        linear-gradient(
+            rgb(25, 89, 168),
+            rgb(9, 45, 98)
+        );
 }
 
 #botonVolverInicio:hover {
-    background-color: rgb(10, 45, 95);
+    border-color: rgb(255, 220, 70);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+}
+
+.botonAccionPartida:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 2px 0 rgba(0, 0, 0, 0.38),
+        0 4px 8px rgba(0, 0, 0, 0.34);
+}
+
+.botonAccionPartida:focus-visible {
+    outline: 3px solid rgb(255, 235, 120);
+    outline-offset: 3px;
 }
 
 .botonAccionPartida:disabled {
     background-color: rgb(110, 110, 110);
+    background-image: none;
     border-color: rgb(160, 160, 160);
+    box-shadow: none;
     cursor: not-allowed;
+    filter: none;
+    transform: none;
 }
 
 #contenidoContacto {
     display: flex;
-    flex: 1;
+    flex: 0 1 auto;
     justify-content: center;
-    align-items: center;
-    padding: 30px 16px;
+    align-items: flex-start;
+    width: 100%;
+    padding: 8px 16px 0;
 }
 
 #seccionContacto {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    justify-content: center;
+    gap: 14px;
     width: 100%;
     max-width: 520px;
-    padding: 34px;
+    min-height: auto;
+    padding: 28px 34px;
     border: 3px solid rgb(255, 150, 0);
-    border-radius: 18px;
+    border-radius: 8px;
     background-color: rgba(6, 35, 67, 0.94);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+    background-image:
+        linear-gradient(
+            rgba(12, 58, 108, 0.96),
+            rgba(4, 26, 55, 0.96)
+        );
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.12),
+        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
+        0 12px 32px rgba(0, 0, 0, 0.58);
 }
 
 #seccionContacto h2 {
-    color: rgb(255, 177, 0);
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    color: rgb(255, 220, 70);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 38px;
     font-weight: normal;
     letter-spacing: 2px;
     text-align: center;
-    text-shadow: 2px 2px 0 rgb(16, 65, 130);
+    text-transform: uppercase;
+    text-shadow:
+        2px 2px 0 rgb(16, 65, 130),
+        4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 #seccionContacto > p {
-    color: rgb(238, 243, 248);
+    max-width: 390px;
+    margin: 0 auto;
+    color: rgb(255, 245, 220);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 800;
+    line-height: 1.35;
     text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.65);
 }
 
 #formularioContacto {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
 }
 
 #formularioContacto textarea {
     width: 100%;
-    padding: 13px;
+    padding: 14px;
     border: 2px solid rgb(185, 198, 212);
-    border-radius: 9px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(30, 30, 30);
+    border-radius: 6px;
+    background-color: rgb(246, 249, 252);
+    color: rgb(25, 35, 48);
     font-family: "Nunito", Arial, sans-serif;
     font-size: 16px;
+    font-weight: 700;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.08),
+        0 4px 8px rgba(0, 0, 0, 0.18);
     resize: vertical;
+    min-height: 96px;
+    transition:
+        border-color 0.18s,
+        box-shadow 0.18s,
+        background-color 0.18s;
 }
 
 #formularioContacto textarea:focus {
     border-color: rgb(255, 150, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.06),
+        0 0 0 3px rgba(255, 150, 0, 0.22);
     outline: none;
 }
 
 .mensajeErrorCampo {
-    min-height: 18px;
-    color: rgb(255, 210, 70);
+    min-height: 14px;
+    color: rgb(255, 230, 150);
     font-size: 13px;
-    font-weight: bold;
-}
-
-.mensajeResultadoContacto {
-    min-height: 20px;
-    color: rgb(255, 210, 70);
-    font-size: 14px;
-    font-weight: bold;
+    font-weight: 800;
     text-align: center;
 }
 
+.mensajeResultadoContacto {
+    min-height: 16px;
+    color: rgb(255, 230, 150);
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.mensajeErrorCampo:not(:empty),
+.mensajeResultadoContacto:not(:empty) {
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 105, 0, 0.82);
+    border-radius: 6px;
+    background-color: rgba(95, 18, 12, 0.72);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 10px rgba(0, 0, 0, 0.28);
+}
+
 #botonEnviarContacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 13px;
     border: 3px solid rgb(255, 190, 0);
-    border-radius: 9px;
+    border-radius: 7px;
     background-color: rgb(255, 105, 0);
+    background-image:
+        linear-gradient(
+            rgb(255, 146, 0),
+            rgb(225, 70, 0)
+        );
     color: rgb(255, 255, 255);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 22px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0 rgba(90, 20, 0, 0.65);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.22),
+        0 6px 0 rgb(145, 38, 0),
+        0 10px 18px rgba(0, 0, 0, 0.42);
+    transition:
+        transform 0.18s,
+        box-shadow 0.18s,
+        border-color 0.18s,
+        filter 0.18s;
 }
 
 #botonEnviarContacto:hover {
-    background-color: rgb(220, 65, 0);
+    border-color: rgb(255, 232, 95);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.24),
+        0 8px 0 rgb(145, 38, 0),
+        0 14px 24px rgba(0, 0, 0, 0.48);
+}
+
+#botonEnviarContacto:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.18),
+        0 3px 0 rgb(145, 38, 0),
+        0 7px 12px rgba(0, 0, 0, 0.42);
+}
+
+#botonEnviarContacto:focus-visible {
+    outline: 3px solid rgb(255, 235, 120);
+    outline-offset: 3px;
 }
 
 #navegacionPrincipal {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 12px 0 8px;
 }
 
 .listaNavegacion {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 8px 10px;
+    border-top: 1px solid rgba(255, 190, 0, 0.55);
+    border-bottom: 2px solid rgba(255, 150, 0, 0.75);
+    background-color: rgba(3, 18, 34, 0.78);
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
     list-style: none;
 }
 
 .enlaceNavegacion {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 82px;
+    min-height: 34px;
     padding: 8px 14px;
     border: 2px solid rgb(255, 177, 0);
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: rgba(6, 35, 67, 0.9);
+    background-image:
+        linear-gradient(
+            rgb(18, 76, 138),
+            rgb(7, 39, 78)
+        );
     color: rgb(255, 255, 255);
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 800;
     text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 4px 0 rgba(0, 0, 0, 0.32),
+        0 7px 12px rgba(0, 0, 0, 0.32);
+    transition:
+        transform 0.18s,
+        box-shadow 0.18s,
+        border-color 0.18s,
+        filter 0.18s;
 }
 
 .enlaceNavegacion:hover {
-    background-color: rgb(255, 105, 0);
+    border-color: rgb(255, 232, 95);
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 6px 0 rgba(0, 0, 0, 0.32),
+        0 10px 16px rgba(0, 0, 0, 0.38);
+}
+
+.enlaceNavegacion:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 2px 0 rgba(0, 0, 0, 0.38),
+        0 4px 8px rgba(0, 0, 0, 0.34);
+}
+
+.enlaceNavegacion:focus-visible {
+    outline: 3px solid rgb(255, 235, 120);
+    outline-offset: 3px;
 }
 
 .enlaceActivo {
     background-color: rgb(255, 105, 0);
+    background-image:
+        linear-gradient(
+            rgb(255, 146, 0),
+            rgb(225, 70, 0)
+        );
     color: rgb(255, 255, 255);
+    border-color: rgb(255, 232, 95);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.22),
+        0 4px 0 rgb(145, 38, 0),
+        0 8px 14px rgba(0, 0, 0, 0.38);
+}
+
+@media (max-height: 760px) {
+    #encabezadoPrincipal {
+        gap: 4px;
+        padding-top: 12px;
+    }
+
+    #encabezadoPrincipal h1 {
+        font-size: 56px;
+    }
+
+    #encabezadoPrincipal p {
+        font-size: 15px;
+        line-height: 1.25;
+    }
+
+    #navegacionPrincipal {
+        padding: 8px 0;
+    }
+
+    #contenidoPrincipal {
+        padding: 6px 16px 0;
+    }
+
+    #inicioPartida {
+        gap: 14px;
+        min-height: auto;
+        padding: 26px 32px;
+    }
+
+    #seccionContacto {
+        gap: 14px;
+        min-height: auto;
+        padding: 24px 30px;
+    }
+
+    #formularioInicio {
+        gap: 12px;
+    }
+
+    #formularioContacto {
+        gap: 9px;
+    }
+
+    .grupoCampo input,
+    .grupoCampo select,
+    #formularioContacto textarea {
+        padding: 11px 12px;
+    }
+
+    body.partidaActiva #encabezadoPrincipal {
+        padding: 8px 16px 0;
+    }
+
+    body.partidaActiva #encabezadoPrincipal h1 {
+        font-size: 40px;
+    }
+
+    #seccionJuego {
+        gap: 7px;
+    }
+
+    #tituloJuego {
+        font-size: 17px;
+    }
+
+    #panelEstadisticas {
+        padding: 6px 8px;
+    }
+
+    #accionesPartida {
+        gap: 6px;
+    }
+
+    .tableroFacil .carta {
+        width: clamp(92px, 11vmin, 112px);
+        height: clamp(104px, 12.4vmin, 128px);
+    }
+
+    .tableroMedio .carta {
+        width: clamp(78px, 9.6vmin, 96px);
+        height: clamp(88px, 10.8vmin, 108px);
+    }
+
+    .tableroDificil .carta {
+        width: clamp(58px, 7.8vmin, 74px);
+        height: clamp(66px, 8.8vmin, 84px);
+    }
+}
+
+@media (max-height: 640px) {
+    #encabezadoPrincipal h1 {
+        font-size: 46px;
+    }
+
+    #encabezadoPrincipal p {
+        font-size: 13px;
+    }
+
+    #inicioPartida {
+        padding: 20px 28px;
+    }
+
+    #seccionContacto {
+        padding: 20px 26px;
+    }
+
+    #inicioPartida h2 {
+        font-size: 32px;
+    }
+
+    #inicioPartida > p {
+        font-size: 14px;
+    }
+
+    #seccionContacto > p {
+        font-size: 14px;
+    }
+
+    .enlaceNavegacion {
+        min-height: 30px;
+        padding: 6px 12px;
+    }
+
+    body.partidaActiva #encabezadoPrincipal {
+        padding-top: 4px;
+    }
+
+    body.partidaActiva #encabezadoPrincipal h1 {
+        font-size: 34px;
+    }
+
+    #tituloJuego {
+        font-size: 15px;
+    }
+
+    #panelEstadisticas {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .datoEstadistica {
+        min-height: 28px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .botonAccionPartida {
+        min-height: 34px;
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .tableroFacil .carta {
+        width: 88px;
+        height: 100px;
+    }
+
+    .tableroMedio .carta {
+        width: 72px;
+        height: 82px;
+    }
+
+    .tableroDificil .carta {
+        width: 54px;
+        height: 62px;
+    }
 }
 
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
-        font-size: 44px;
+        font-size: 52px;
     }
 
     #encabezadoPrincipal p {
-        font-size: 16px;
+        max-width: 420px;
+        font-size: 15px;
     }
 
     #inicioPartida {
         max-width: 460px;
+        min-height: 410px;
         padding: 30px 26px;
     }
 
+    #seccionContacto {
+        max-width: 460px;
+        min-height: auto;
+        padding: 24px 24px;
+    }
+
     #inicioPartida h2 {
-        font-size: 33px;
+        font-size: 34px;
+    }
+
+    #seccionContacto h2 {
+        font-size: 34px;
     }
 }
 
 @media (max-width: 480px) {
     #encabezadoPrincipal {
-        padding-top: 20px;
+        padding-top: 16px;
     }
 
     #encabezadoPrincipal h1 {
-        font-size: 37px;
-        letter-spacing: 2px;
+        font-size: 42px;
+        letter-spacing: 1px;
     }
 
     #encabezadoPrincipal p {
-        font-size: 14px;
+        max-width: 330px;
+        font-size: 13px;
     }
 
     #contenidoPrincipal {
         align-items: flex-start;
-        padding-top: 18px;
+        padding: 6px 12px 0;
+    }
+
+    #contenidoContacto {
+        align-items: flex-start;
+        padding: 6px 12px 0;
     }
 
     #inicioPartida {
+        min-height: auto;
         padding: 26px 20px;
         border-width: 2px;
     }
 
+    #seccionContacto {
+        min-height: auto;
+        padding: 22px 18px;
+        border-width: 2px;
+    }
+
     #inicioPartida h2 {
-        font-size: 30px;
+        font-size: 31px;
+    }
+
+    #seccionContacto h2 {
+        font-size: 31px;
     }
 
     #botonIniciarPartida {
@@ -687,10 +1352,11 @@ body.partidaActiva #navegacionPrincipal {
     }
 
     body.partidaActiva #encabezadoPrincipal h1 {
-        font-size: 27px;
+        font-size: 34px;
     }
 
     body.partidaActiva #contenidoPrincipal {
+        align-items: flex-start;
         padding: 4px;
     }
 
@@ -700,74 +1366,79 @@ body.partidaActiva #navegacionPrincipal {
     }
 
     #tituloJuego {
-        font-size: 22px;
-    }
-
-    #datosPartida p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     #tableroJuego.tableroFacil {
         gap: 6px;
-        max-width: 286px;
+        max-width: 350px;
     }
 
     #tableroJuego.tableroMedio {
         gap: 5px;
-        max-width: 271px;
+        max-width: 360px;
     }
 
     #tableroJuego.tableroDificil {
-        gap: 3px;
-        max-width: 273px;
+        gap: 4px;
+        max-width: 360px;
     }
 
     .tableroFacil .carta {
-        width: 67px;
-        height: 82px;
+        width: clamp(67px, 20vw, 82px);
+        height: clamp(82px, 24vw, 98px);
         padding: 4px;
     }
 
     .tableroMedio .carta {
-        width: 64px;
-        height: 72px;
+        width: clamp(58px, 17vw, 68px);
+        height: clamp(68px, 19vw, 78px);
         padding: 3px;
     }
 
     .tableroDificil .carta {
-        width: 43px;
-        height: 55px;
+        width: clamp(43px, 14vw, 56px);
+        height: clamp(54px, 16vw, 66px);
         padding: 2px;
     }
 
     .tableroFacil .imagenCarta {
-        height: 54px;
+        height: 66%;
     }
 
     .tableroMedio .imagenCarta {
-        height: 46px;
+        height: 64%;
     }
 
     .tableroDificil .imagenCarta {
-        height: 35px;
+        height: 76%;
     }
 
-    .tableroDificil .nombreCarta {
-        font-size: 6px;
+    .tableroDificil .cartaRevelada .nombreCarta {
+        display: none;
     }
 
     .tableroDificil .reversoCarta {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     #panelEstadisticas {
         gap: 5px;
+        max-width: 320px;
+        padding: 6px;
     }
 
     .datoEstadistica {
+        flex: 1 1 88px;
         min-width: 86px;
+        min-height: 30px;
         padding: 4px 6px;
         font-size: 11px;
+    }
+
+    .datoEstadistica span {
+        min-width: 18px;
+        font-size: 12px;
     }
 
     #contenidoModalResultado {
@@ -787,30 +1458,41 @@ body.partidaActiva #navegacionPrincipal {
     }
 
     .botonAccionPartida {
-        padding: 5px 8px;
+        min-height: 34px;
+        padding: 6px 9px;
         font-size: 12px;
-    }
-
-    #contenidoContacto {
-        align-items: flex-start;
-        padding: 18px 12px;
-    }      
-
-    #seccionContacto {
-        padding: 26px 20px;
-        border-width: 2px;
-    }
-
-    #seccionContacto h2 {
-        font-size: 30px;
     }
 
     .listaNavegacion {
         gap: 6px;
+        padding: 7px;
     }
 
     .enlaceNavegacion {
+        min-width: 70px;
+        min-height: 30px;
         padding: 6px 9px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) and (max-height: 760px) {
+    #contenidoPrincipal {
+        padding: 4px 12px 0;
+    }
+
+    #inicioPartida {
+        gap: 12px;
+        min-height: auto;
+        padding: 20px 18px;
+    }
+
+    #formularioInicio {
+        gap: 12px;
+    }
+
+    .grupoCampo input,
+    .grupoCampo select {
+        padding: 10px 12px;
     }
 }
