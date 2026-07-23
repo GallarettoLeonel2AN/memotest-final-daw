@@ -52,8 +52,16 @@ var resultadoTiempo = document.getElementById(
 var resultadoPuntaje = document.getElementById(
     "resultadoPuntaje"
 );
-var botonCerrarResultado = document.getElementById(
-    "botonCerrarResultado"
+var botonJugarDeNuevo = document.getElementById(
+    "botonJugarDeNuevo"
+);
+
+var botonReiniciarPartida = document.getElementById(
+    "botonReiniciarPartida"
+);
+
+var botonVolverInicio = document.getElementById(
+    "botonVolverInicio"
 );
 
 function obtenerPenalizacion(nivel) {
@@ -214,10 +222,6 @@ function mostrarResultadoFinal() {
     modalResultado.hidden = false;
 }
 
-function cerrarResultadoFinal() {
-    modalResultado.hidden = true;
-}
-
 function verificarFinPartida() {
     if (paresEncontrados === totalParesJuego) {
         tableroBloqueado = true;
@@ -253,6 +257,7 @@ function ocultarCartasIncorrectas() {
     ocultarCarta(segundaCartaSeleccionada);
 
     limpiarCartasSeleccionadas();
+    desbloquearAccionesPartida();
 }
 
 function procesarParejaIncorrecta() {
@@ -271,8 +276,12 @@ function procesarParejaIncorrecta() {
     }
 
     actualizarEstadisticas();
+    bloquearAccionesPartida();
 
-    setTimeout(ocultarCartasIncorrectas, 1000);
+    setTimeout(
+        ocultarCartasIncorrectas,
+        1000
+    );
 }
 
 function compararCartasSeleccionadas() {
@@ -476,6 +485,8 @@ function generarTablero(cartas, nivel , nombreJugador) {
 
     tablero.textContent = "";
 
+    cartasJuegoActual = cartas.slice();
+
     cantidadPares = cartas.length / 2;
 
     nombreJugadorActualJuego = nombreJugador.trim();
@@ -485,6 +496,7 @@ function generarTablero(cartas, nivel , nombreJugador) {
     reiniciarEstadisticas(nivel, cantidadPares);
     reiniciarTemporizador();
     asignarClaseTablero(tablero, nivel);
+    desbloquearAccionesPartida();
 
     for (indice = 0; indice < cartas.length; indice++) {
         elementoCarta = crearElementoCarta(
@@ -495,7 +507,47 @@ function generarTablero(cartas, nivel , nombreJugador) {
     }
 }
 
-botonCerrarResultado.addEventListener(
+function reiniciarPartidaActual() {
+    var cartasMezcladas;
+
+    cartasMezcladas = mezclarCartas(
+        cartasJuegoActual.slice()
+    );
+
+    generarTablero(
+        cartasMezcladas,
+        nivelActualJuego,
+        nombreJugadorActualJuego
+    );
+}
+
+function limpiarPartidaActual() {
+    var tablero;
+
+    tablero = document.getElementById("tableroJuego");
+
+    reiniciarSeleccionDeCartas();
+    reiniciarEstadisticas("", 0);
+    reiniciarTemporizador();
+
+    cartasJuegoActual = [];
+    nombreJugadorActualJuego = "";
+
+    tablero.textContent = "";
+    modalResultado.hidden = true;
+}
+
+function bloquearAccionesPartida() {
+    botonReiniciarPartida.disabled = true;
+    botonVolverInicio.disabled = true;
+}
+
+function desbloquearAccionesPartida() {
+    botonReiniciarPartida.disabled = false;
+    botonVolverInicio.disabled = false;
+}
+
+botonJugarDeNuevo.addEventListener(
     "click",
-    cerrarResultadoFinal
+    reiniciarPartidaActual
 );

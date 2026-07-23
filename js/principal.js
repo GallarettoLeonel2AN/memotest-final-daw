@@ -25,6 +25,12 @@ var jugadorActual = document.getElementById(
 var nivelActual = document.getElementById(
     "nivelActual"
 );
+var botonCambiarDatos = document.getElementById(
+    "botonCambiarDatos"
+);
+var botonVolverInicio = document.getElementById(
+    "botonVolverInicio"
+);
 
 var personajesCargados = [];
 var cartasPreparadas = [];
@@ -154,7 +160,33 @@ async function procesarFormularioInicio(evento) {
     restaurarBotonInicio();
 }
 
+function volverAlInicio() {
+    limpiarPartidaActual();
+    limpiarMensajeInicio();
+
+    seccionJuego.hidden = true;
+    inicioPartida.hidden = false;
+
+    document.body.classList.remove("partidaActiva");
+
+    nombreJugador.focus();
+}
+
+botonCambiarDatos.addEventListener(
+    "click",
+    volverAlInicio
+);
+
 formularioInicio.addEventListener(
     "submit",
     procesarFormularioInicio
+);
+
+botonVolverInicio.addEventListener(
+    "click",
+    volverAlInicio
+);
+botonReiniciarPartida.addEventListener(
+    "click",
+    reiniciarPartidaActual
 );
