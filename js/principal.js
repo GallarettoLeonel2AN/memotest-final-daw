@@ -28,6 +28,9 @@ var nivelActual = document.getElementById(
 var botonCambiarDatos = document.getElementById(
     "botonCambiarDatos"
 );
+var botonVolverInicio = document.getElementById(
+    "botonVolverInicio"
+);
 
 var personajesCargados = [];
 var cartasPreparadas = [];
@@ -177,4 +180,13 @@ botonCambiarDatos.addEventListener(
 formularioInicio.addEventListener(
     "submit",
     procesarFormularioInicio
+);
+
+botonVolverInicio.addEventListener(
+    "click",
+    volverAlInicio
+);
+botonReiniciarPartida.addEventListener(
+    "click",
+    reiniciarPartidaActual
 );

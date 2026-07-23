@@ -464,6 +464,44 @@ body.partidaActiva #piePagina {
     background-color: rgb(10, 45, 95);
 }
 
+#accionesPartida {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.botonAccionPartida {
+    padding: 7px 12px;
+    border: 2px solid rgb(255, 190, 0);
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 15px;
+}
+
+#botonReiniciarPartida {
+    background-color: rgb(255, 105, 0);
+}
+
+#botonReiniciarPartida:hover {
+    background-color: rgb(220, 65, 0);
+}
+
+#botonVolverInicio {
+    background-color: rgb(16, 65, 130);
+}
+
+#botonVolverInicio:hover {
+    background-color: rgb(10, 45, 95);
+}
+
+.botonAccionPartida:disabled {
+    background-color: rgb(110, 110, 110);
+    border-color: rgb(160, 160, 160);
+    cursor: not-allowed;
+}
+
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;
@@ -603,7 +641,7 @@ body.partidaActiva #piePagina {
     }
     #contenidoModalResultado {
     padding: 24px 20px;
-}
+    }   
 
     #contenidoModalResultado h2 {
         font-size: 28px;
@@ -613,4 +651,12 @@ body.partidaActiva #piePagina {
         font-size: 14px;
     }
     
+    #accionesPartida {
+    gap: 5px;
+    }
+
+    .botonAccionPartida {
+    padding: 5px 8px;
+    font-size: 12px;
+    }
 }

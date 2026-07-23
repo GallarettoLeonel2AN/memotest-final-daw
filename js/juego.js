@@ -56,6 +56,14 @@ var botonJugarDeNuevo = document.getElementById(
     "botonJugarDeNuevo"
 );
 
+var botonReiniciarPartida = document.getElementById(
+    "botonReiniciarPartida"
+);
+
+var botonVolverInicio = document.getElementById(
+    "botonVolverInicio"
+);
+
 function obtenerPenalizacion(nivel) {
     if (nivel === "facil") {
         return 10;
@@ -249,6 +257,7 @@ function ocultarCartasIncorrectas() {
     ocultarCarta(segundaCartaSeleccionada);
 
     limpiarCartasSeleccionadas();
+    desbloquearAccionesPartida();
 }
 
 function procesarParejaIncorrecta() {
@@ -267,8 +276,12 @@ function procesarParejaIncorrecta() {
     }
 
     actualizarEstadisticas();
+    bloquearAccionesPartida();
 
-    setTimeout(ocultarCartasIncorrectas, 1000);
+    setTimeout(
+        ocultarCartasIncorrectas,
+        1000
+    );
 }
 
 function compararCartasSeleccionadas() {
@@ -483,6 +496,7 @@ function generarTablero(cartas, nivel , nombreJugador) {
     reiniciarEstadisticas(nivel, cantidadPares);
     reiniciarTemporizador();
     asignarClaseTablero(tablero, nivel);
+    desbloquearAccionesPartida();
 
     for (indice = 0; indice < cartas.length; indice++) {
         elementoCarta = crearElementoCarta(
@@ -523,6 +537,15 @@ function limpiarPartidaActual() {
     modalResultado.hidden = true;
 }
 
+function bloquearAccionesPartida() {
+    botonReiniciarPartida.disabled = true;
+    botonVolverInicio.disabled = true;
+}
+
+function desbloquearAccionesPartida() {
+    botonReiniciarPartida.disabled = false;
+    botonVolverInicio.disabled = false;
+}
 
 botonJugarDeNuevo.addEventListener(
     "click",
