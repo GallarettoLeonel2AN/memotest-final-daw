@@ -42,7 +42,7 @@ function validarNombreContacto(nombre) {
     var nombreLimpio;
 
     expresionNombre =
-        /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$/;
+        /^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d10-9 ]+$/;
 
     nombreLimpio = nombre.trim();
 
@@ -80,21 +80,21 @@ function validarFormularioContacto() {
 
     if (validarNombreContacto(nombreContacto.value) === false) {
         errorNombreContacto.textContent =
-            "Ingresá un nombre alfanumérico.";
+            "Ingres\u00e1 un nombre alfanum\u00e9rico.";
 
         formularioValido = false;
     }
 
     if (validarCorreoContacto(correoContacto.value) === false) {
         errorCorreoContacto.textContent =
-            "Ingresá un correo electrónico válido.";
+            "Ingres\u00e1 un correo electr\u00f3nico v\u00e1lido.";
 
         formularioValido = false;
     }
 
     if (validarMensajeContacto(mensajeContacto.value) === false) {
         errorMensajeContacto.textContent =
-            "El mensaje debe tener más de 5 caracteres.";
+            "El mensaje debe tener m\u00e1s de 5 caracteres.";
 
         formularioValido = false;
     }
@@ -142,7 +142,7 @@ function enviarFormularioContacto(evento) {
 
     if (validarFormularioContacto() === false) {
         resultadoFormularioContacto.textContent =
-            "Revisá los campos marcados.";
+            "Revis\u00e1 los campos marcados.";
 
         return;
     }

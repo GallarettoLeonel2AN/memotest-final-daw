@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
         content="Juego de memoria basado en personajes de Dragon Ball"
     >
     <title>Dragon Ball Memotest</title>
+    <link rel="icon" href="assets/img/esfera-dragon.svg" type="image/svg+xml">
     <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap">
@@ -18,55 +19,56 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-   <header id="encabezadoPrincipal">
-    <nav id="navegacionPrincipal">
-        <ul class="listaNavegacion">
-            <li>
-                <a
-                    class="enlaceNavegacion enlaceActivo"
-                    href="index.html"
-                >
-                    Juego
-                </a>
-            </li>
+    <header id="encabezadoPrincipal">
+        <h1>Dragon Ball Memotest</h1>
 
-            <li>
-                <a
-                    class="enlaceNavegacion"
-                    href="pages/contacto.html"
-                >
-                    Contacto
-                </a>
-            </li>
+        <p>
+            Encontrá todos los pares de personajes en el menor tiempo posible.
+        </p>
 
-            <li>
-                <a
-                    class="enlaceNavegacion"
-                    href="https://github.com/GallarettoLeonel2AN/memotest-final-daw"
-                    target="_blank"
-                >
-                    GitHub
-                </a>
-            </li>
+        <nav id="navegacionPrincipal">
+            <ul class="listaNavegacion">
+                <li>
+                    <a
+                        class="enlaceNavegacion enlaceActivo"
+                        href="index.html"
+                    >
+                        Juego
+                    </a>
+                </li>
 
-            <li>
-                <a
-                    class="enlaceNavegacion"
-                    href="https://web.dragonball-api.com"
-                    target="_blank"
-                >
-                    API
-                </a>
-            </li>
-        </ul>
-    </nav>
+                <li>
+                    <a
+                        class="enlaceNavegacion"
+                        href="pages/contacto.html"
+                    >
+                        Contacto
+                    </a>
+                </li>
 
-    <h1>Dragon Ball Memotest</h1>
+                <li>
+                    <a
+                        class="enlaceNavegacion"
+                        href="https://github.com/GallarettoLeonel2AN/memotest-final-daw"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+                </li>
 
-    <p>
-        Encontrá todos los pares de personajes en el menor tiempo posible.
-    </p>
-</header>
+                <li>
+                    <a
+                        class="enlaceNavegacion"
+                        href="https://web.dragonball-api.com"
+                        target="_blank"
+                    >
+                        API
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
 
     <main id="contenidoPrincipal">
         <section
@@ -75,7 +77,7 @@
             <h2 id="tituloInicioPartida">Prepara tu partida</h2>
 
             <p>
-                Ingresá tu nombre y seleccioná una dificultad para comenzar.
+                Ingresa tu nombre y selecciona una dificultad para comenzar.
             </p>
 
             <form id="formularioInicio">
@@ -89,7 +91,7 @@
                         name="nombreJugador"
                         type="text"
                         autocomplete="name"
-                        placeholder="Ingresá tu nombre"
+                        placeholder="Ingresa tu nombre"
                     >
                 </div>
 
@@ -103,11 +105,11 @@
                         name="nivelDificultad"
                     >
                         <option value="">
-                            Seleccioná un nivel
+                            Selecciona un nivel
                         </option>
 
                         <option value="facil">
-                            Fácil - 16 cartas
+                            Facil - 16 cartas
                         </option>
 
                         <option value="medio">
@@ -115,7 +117,7 @@
                         </option>
 
                         <option value="dificil">
-                            Difícil - 36 cartas
+                            Dificil - 36 cartas
                         </option>
                     </select>
                 </div>
@@ -138,12 +140,8 @@
             <div id="datosPartida">
                 <h2 id="tituloJuego">
                     Partida de <span id="jugadorActual"></span>
+                    Nivel: <span id="nivelActual"></span>
                 </h2>
-            
-                <p>
-                    Nivel:
-                    <span id="nivelActual"></span>
-                </p>
             </div>
             <div id="panelEstadisticas">
                 <p class="datoEstadistica">
@@ -196,7 +194,7 @@
         </section>
         <section id="modalResultado" hidden>
             <div id="contenidoModalResultado">
-                <h2 id="tituloModalResultado">¡Partida completada!</h2>
+                <h2 id="tituloModalResultado">Partida completada!</h2>
 
               <div id="datosResultado">
             <p>
@@ -252,9 +250,6 @@
 
     </main>
 
-    <footer id="piePagina">
-        <p>Desarrollado con ❤ por Sosa Ulises, Terrazzino Franco y Gallaretto Leonel</p>
-    </footer>
     <script src="js/validaciones.js"></script>
     <script src="js/api-dragon-ball.js"></script>
     <script src="js/juego.js"></script>

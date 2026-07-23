@@ -363,7 +363,7 @@ function crearElementoCarta(carta) {
     );
 
     reversoCarta.className = "reversoCarta";
-    reversoCarta.textContent = "?";
+    reversoCarta.textContent = "★";
 
     imagenCarta.className = "imagenCarta";
     imagenCarta.src = carta.imagen;
