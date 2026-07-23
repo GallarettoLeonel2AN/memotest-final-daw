@@ -502,6 +502,96 @@ body.partidaActiva #piePagina {
     cursor: not-allowed;
 }
 
+#contenidoContacto {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+}
+
+#seccionContacto {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 520px;
+    padding: 34px;
+    border: 3px solid rgb(255, 150, 0);
+    border-radius: 18px;
+    background-color: rgba(6, 35, 67, 0.94);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+#seccionContacto h2 {
+    color: rgb(255, 177, 0);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgb(16, 65, 130);
+}
+
+#seccionContacto > p {
+    color: rgb(238, 243, 248);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#formularioContacto {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#formularioContacto textarea {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid rgb(185, 198, 212);
+    border-radius: 9px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(30, 30, 30);
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+    resize: vertical;
+}
+
+#formularioContacto textarea:focus {
+    border-color: rgb(255, 150, 0);
+    outline: none;
+}
+
+.mensajeErrorCampo {
+    min-height: 18px;
+    color: rgb(255, 210, 70);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.mensajeResultadoContacto {
+    min-height: 20px;
+    color: rgb(255, 210, 70);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#botonEnviarContacto {
+    padding: 13px;
+    border: 3px solid rgb(255, 190, 0);
+    border-radius: 9px;
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    font-family: "FuenteDragonBall", Arial, sans-serif;
+    font-size: 22px;
+}
+
+#botonEnviarContacto:hover {
+    background-color: rgb(220, 65, 0);
+}
+
 @media (max-width: 600px) {
     #encabezadoPrincipal h1 {
         font-size: 44px;
@@ -630,17 +720,19 @@ body.partidaActiva #piePagina {
     .tableroDificil .reversoCarta {
         font-size: 22px;
     }
+
     #panelEstadisticas {
-    gap: 5px;
+        gap: 5px;
     }
 
     .datoEstadistica {
-    min-width: 86px;
-    padding: 4px 6px;
-    font-size: 11px;
+        min-width: 86px;
+        padding: 4px 6px;
+        font-size: 11px;
     }
+
     #contenidoModalResultado {
-    padding: 24px 20px;
+     padding: 24px 20px;
     }   
 
     #contenidoModalResultado h2 {
@@ -652,11 +744,25 @@ body.partidaActiva #piePagina {
     }
     
     #accionesPartida {
-    gap: 5px;
+        gap: 5px;
     }
 
     .botonAccionPartida {
-    padding: 5px 8px;
-    font-size: 12px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    #contenidoContacto {
+        align-items: flex-start;
+        padding: 18px 12px;
+    }      
+
+    #seccionContacto {
+        padding: 26px 20px;
+        border-width: 2px;
+    }
+
+    #seccionContacto h2 {
+        font-size: 30px;
     }
 }

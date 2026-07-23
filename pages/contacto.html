@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Formulario de contacto de Dragon Ball Memotest"
+    >
+    <title>Contacto - Dragon Ball Memotest</title>
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header id="encabezadoPrincipal">
+        <h1>Dragon Ball Memotest</h1>
+
+        <p>
+            Envianos tu consulta a traves del formulario
+        </p>
+    </header>
+
+    <main id="contenidoContacto">
+        <section id="seccionContacto">
+            <h2>Contacto</h2>
+
+            <p>
+                Completá los siguientes campos para enviarnos un mensaje
+            </p>
+
+            <form id="formularioContacto" novalidate>
+                <div class="grupoCampo">
+                    <label for="nombreContacto">
+                        Nombre
+                    </label>
+
+                    <input
+                        id="nombreContacto"
+                        name="nombreContacto"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="Ingresá tu nombre"
+                    >
+
+                    <p
+                        id="errorNombreContacto"
+                        class="mensajeErrorCampo"
+                    ></p>
+                </div>
+
+                <div class="grupoCampo">
+                    <label for="correoContacto">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        id="correoContacto"
+                        name="correoContacto"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="nombre@correo.com"
+                    >
+
+                    <p
+                        id="errorCorreoContacto"
+                        class="mensajeErrorCampo"
+                    ></p>
+                </div>
+
+                <div class="grupoCampo">
+                    <label for="mensajeContacto">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensajeContacto"
+                        name="mensajeContacto"
+                        rows="5"
+                        placeholder="Escribí tu mensaje"
+                    ></textarea>
+
+                    <p
+                        id="errorMensajeContacto"
+                        class="mensajeErrorCampo"
+                    ></p>
+                </div>
+
+                <p
+                    id="resultadoFormularioContacto"
+                    class="mensajeResultadoContacto"
+                ></p>
+
+                <button
+                    id="botonEnviarContacto"
+                    type="submit"
+                >
+                    Enviar mensaje
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="piePagina">
+        <p>
+            Desarrollado con ❤ por Sosa Ulises, Terrazzino Franco y Gallaretto Leonel
+        </p>
+    </footer>
+
+    <script src="../js/contacto.js"></script>
+</body>
+</html>
