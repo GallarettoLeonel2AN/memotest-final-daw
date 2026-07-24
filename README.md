@@ -104,6 +104,7 @@ dragon-ball-memotest/
 │   ├── api-dragon-ball.js
 │   ├── contacto.js
 │   ├── juego.js
+│   ├── modo-color.js
 │   ├── principal.js
 │   └── validaciones.js
 ├── pages/
