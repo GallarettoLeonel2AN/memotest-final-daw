@@ -119,6 +119,10 @@
                         <option value="dificil">
                             Dificil - 36 cartas
                         </option>
+                        
+                        <option value="progresivo">
+                            Modo Progresivo
+                        </option>
                     </select>
                 </div>
 
@@ -187,7 +191,7 @@
                     class="botonAccionPartida"
                     type="button"
                 >
-                    Cambiar jugador o dificultad
+                    Volver al inicio
                 </button>
             </div>
             <div id="tableroJuego"></div>
@@ -228,7 +232,18 @@
             </p>
         </div>
 
+        
+
         <div id="accionesResultado">
+            <button
+                id="botonSiguienteNivel"
+                class="botonModalResultado"
+                type="button"
+                hidden
+            >
+                Continuar al siguiente nivel
+            </button>
+            
             <button
                 id="botonJugarDeNuevo"
                 class="botonModalResultado"
@@ -242,7 +257,7 @@
                 class="botonModalResultado"
                 type="button"
             >
-                Cambiar jugador o dificultad
+                Volver al inicio
             </button>
         </div>
      </div>

@@ -31,7 +31,14 @@ var botonCambiarDatos = document.getElementById(
 var botonVolverInicio = document.getElementById(
     "botonVolverInicio"
 );
+var nivelesProgresivos = [
+    "facil",
+    "medio",
+    "dificil"
+];
 
+var indiceNivelProgresivo = 0;
+var nombreJugadorProgresivo = "";
 var personajesCargados = [];
 var cartasPreparadas = [];
 
@@ -68,6 +75,10 @@ function obtenerCantidadPersonajes(nivel) {
         return 18;
     }
 
+    if (nivel === "progresivo") {
+        return 18;
+    }
+
     return 0;
 }
 
@@ -95,7 +106,69 @@ function mostrarJuego(nombre, nivel) {
     seccionJuego.hidden = false;
     document.body.classList.add("partidaActiva");
 }
+function generarNivelProgresivo() {
+    var nivel;
+    var cantidadPersonajes;
+    var personajesNivel;
 
+    nivel = nivelesProgresivos[
+        indiceNivelProgresivo
+    ];
+
+    cantidadPersonajes = obtenerCantidadPersonajes(
+        nivel
+    );
+
+    personajesNivel = personajesCargados.slice(
+        0,
+        cantidadPersonajes
+    );
+
+    cartasPreparadas = prepararCartas(
+        personajesNivel
+    );
+
+    generarTablero(
+        cartasPreparadas,
+        nivel,
+        nombreJugadorProgresivo
+    );
+
+    mostrarJuego(
+        nombreJugadorProgresivo,
+        nivel
+    );
+
+    nivelActual.textContent =
+        "Progresivo - " +
+        obtenerNombreNivel(nivel);
+}
+
+function iniciarModoProgresivo(nombre) {
+    indiceNivelProgresivo = 0;
+    nombreJugadorProgresivo = nombre.trim();
+
+    iniciarModoProgresivoJuego();
+    generarNivelProgresivo();
+}
+
+function avanzarNivelProgresivo() {
+    indiceNivelProgresivo++;
+
+    if (
+        indiceNivelProgresivo <
+        nivelesProgresivos.length
+    ) {
+        generarNivelProgresivo();
+    }
+}
+
+function reiniciarModoProgresivoCompleto() {
+    indiceNivelProgresivo = 0;
+
+    iniciarModoProgresivoJuego();
+    generarNivelProgresivo();
+}
 async function procesarFormularioInicio(evento) {
     var nombreIngresado;
     var nivelElegido;
@@ -139,20 +212,28 @@ async function procesarFormularioInicio(evento) {
             cantidadPersonajes
         );
 
-        cartasPreparadas = prepararCartas(
-            personajesCargados
-        );
+        if (nivelElegido === "progresivo") {
+            iniciarModoProgresivo(
+                nombreIngresado
+            );
+        } else {
+            iniciarModoNormalJuego();
 
-        generarTablero(
-            cartasPreparadas,
-            nivelElegido,
-            nombreIngresado
-        );
+            cartasPreparadas = prepararCartas(
+                personajesCargados
+            );
 
-        mostrarJuego(
-            nombreIngresado,
-            nivelElegido
-        );
+            generarTablero(
+                cartasPreparadas,
+                nivelElegido,
+                nombreIngresado
+            );
+
+            mostrarJuego(
+                nombreIngresado,
+                nivelElegido
+            );
+        }
     } catch (error) {
         mostrarMensajeInicio(error.message);
     }

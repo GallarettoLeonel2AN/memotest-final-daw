@@ -11,6 +11,12 @@ var tableroBloqueado = false;
 var segundosTranscurridos = 0;
 var identificadorTemporizador = null;
 var temporizadorIniciado = false;
+var modoProgresivoJuego = false;
+var modoProgresivoCompletado = false;
+var puntajeAcumuladoProgresivo = 0;
+var intentosAcumuladosProgresivo = 0;
+var erroresAcumuladosProgresivo = 0;
+var segundosAcumuladosProgresivo = 0;
 
 
 var cantidadIntentosElemento = document.getElementById(
@@ -64,6 +70,38 @@ var botonVolverInicio = document.getElementById(
     "botonVolverInicio"
 );
 
+var tituloModalResultado = document.getElementById(
+    "tituloModalResultado"
+);
+
+var botonSiguienteNivel = document.getElementById(
+    "botonSiguienteNivel"
+);
+
+
+
+
+function iniciarModoNormalJuego() {
+    modoProgresivoJuego = false;
+    modoProgresivoCompletado = false;
+
+    reiniciarResultadosProgresivos();
+}
+
+function iniciarModoProgresivoJuego() {
+    modoProgresivoJuego = true;
+    modoProgresivoCompletado = false;
+
+    reiniciarResultadosProgresivos();
+}
+
+function reiniciarResultadosProgresivos() {
+    puntajeAcumuladoProgresivo = 0;
+    intentosAcumuladosProgresivo = 0;
+    erroresAcumuladosProgresivo = 0;
+    segundosAcumuladosProgresivo = 0;
+}
+
 function obtenerPenalizacion(nivel) {
     if (nivel === "facil") {
         return 10;
@@ -80,6 +118,126 @@ function obtenerPenalizacion(nivel) {
     return 0;
 }
 
+function acumularResultadoProgresivo() {
+    puntajeAcumuladoProgresivo =
+        puntajeAcumuladoProgresivo +
+        puntaje;
+
+    intentosAcumuladosProgresivo =
+        intentosAcumuladosProgresivo +
+        intentos;
+
+    erroresAcumuladosProgresivo =
+        erroresAcumuladosProgresivo +
+        errores;
+
+    segundosAcumuladosProgresivo =
+        segundosAcumuladosProgresivo +
+        segundosTranscurridos;
+}
+
+function mostrarResultadoIntermedioProgresivo() {
+    tituloModalResultado.textContent =
+        "¡Nivel " +
+        obtenerNombreNivelResultado(
+            nivelActualJuego
+        ) +
+        " completado!";
+
+    resultadoJugador.textContent =
+        nombreJugadorActualJuego;
+
+    resultadoNivel.textContent =
+        obtenerNombreNivelResultado(
+            nivelActualJuego
+        );
+
+    resultadoIntentos.textContent =
+        intentos;
+
+    resultadoErrores.textContent =
+        errores;
+
+    resultadoTiempo.textContent =
+        formatearTiempo(
+            segundosTranscurridos
+        );
+
+    resultadoPuntaje.textContent =
+        puntajeAcumuladoProgresivo;
+
+    botonSiguienteNivel.hidden = false;
+    botonJugarDeNuevo.hidden = true;
+    botonCambiarDatos.hidden = false;
+
+    modalResultado.hidden = false;
+}
+function mostrarResultadoFinalProgresivo() {
+    modoProgresivoCompletado = true;
+
+    tituloModalResultado.textContent =
+        "¡Modo progresivo completado!";
+
+    resultadoJugador.textContent =
+        nombreJugadorActualJuego;
+
+    resultadoNivel.textContent =
+        "Fácil, Medio y Difícil";
+
+    resultadoIntentos.textContent =
+        intentosAcumuladosProgresivo;
+
+    resultadoErrores.textContent =
+        erroresAcumuladosProgresivo;
+
+    resultadoTiempo.textContent =
+        formatearTiempo(
+            segundosAcumuladosProgresivo
+        );
+
+    resultadoPuntaje.textContent =
+        puntajeAcumuladoProgresivo;
+
+    botonSiguienteNivel.hidden = true;
+    botonJugarDeNuevo.hidden = false;
+    botonJugarDeNuevo.textContent =
+        "Jugar modo progresivo de nuevo";
+
+    botonCambiarDatos.hidden = false;
+
+    modalResultado.hidden = false;
+}
+
+function mostrarResultadoFinal() {
+    tituloModalResultado.textContent =
+    "¡Partida completada!";
+
+    botonSiguienteNivel.hidden = true;
+    botonJugarDeNuevo.hidden = false;
+    botonJugarDeNuevo.textContent =
+        "Jugar de nuevo";
+
+    botonCambiarDatos.hidden = false;
+
+
+    resultadoJugador.textContent =
+        nombreJugadorActualJuego;
+
+    resultadoNivel.textContent =
+        obtenerNombreNivelResultado(nivelActualJuego);
+
+    resultadoIntentos.textContent = intentos;
+    resultadoErrores.textContent = errores;
+
+    resultadoTiempo.textContent = formatearTiempo(
+        segundosTranscurridos
+    );
+
+    resultadoPuntaje.textContent = puntaje;
+
+    modalResultado.hidden = false;
+}
+
 function actualizarEstadisticas() {
     cantidadIntentosElemento.textContent = intentos;
     cantidadErroresElemento.textContent = errores;
@@ -87,7 +245,14 @@ function actualizarEstadisticas() {
         paresEncontrados;
     cantidadTotalParesElemento.textContent =
         totalParesJuego;
-    puntajeActualElemento.textContent = puntaje;
+    if (modoProgresivoJuego === true) {
+    puntajeActualElemento.textContent =
+        puntajeAcumuladoProgresivo +
+        puntaje;
+    } else {
+    puntajeActualElemento.textContent =
+        puntaje;
+}
 }
 
 function reiniciarEstadisticas(nivel, totalPares) {
@@ -203,33 +368,31 @@ function calcularPuntajeFinal() {
     actualizarEstadisticas();
 }
 
-function mostrarResultadoFinal() {
-    resultadoJugador.textContent =
-        nombreJugadorActualJuego;
 
-    resultadoNivel.textContent =
-        obtenerNombreNivelResultado(nivelActualJuego);
-
-    resultadoIntentos.textContent = intentos;
-    resultadoErrores.textContent = errores;
-
-    resultadoTiempo.textContent = formatearTiempo(
-        segundosTranscurridos
-    );
-
-    resultadoPuntaje.textContent = puntaje;
-
-    modalResultado.hidden = false;
-}
 
 function verificarFinPartida() {
-    if (paresEncontrados === totalParesJuego) {
-        tableroBloqueado = true;
-
-        detenerTemporizador();
-        calcularPuntajeFinal();
-        mostrarResultadoFinal();
+    if (paresEncontrados !== totalParesJuego) {
+        return;
     }
+
+    tableroBloqueado = true;
+
+    detenerTemporizador();
+    calcularPuntajeFinal();
+
+    if (modoProgresivoJuego === true) {
+        acumularResultadoProgresivo();
+
+        if (nivelActualJuego === "dificil") {
+            mostrarResultadoFinalProgresivo();
+        } else {
+            mostrarResultadoIntermedioProgresivo();
+        }
+
+        return;
+    }
+
+    mostrarResultadoFinal();
 }
 
 function procesarParejaCorrecta() {
@@ -547,7 +710,32 @@ function desbloquearAccionesPartida() {
     botonVolverInicio.disabled = false;
 }
 
+function continuarSiguienteNivel() {
+    modalResultado.hidden = true;
+
+    avanzarNivelProgresivo();
+}
+
+function procesarJugarDeNuevo() {
+    if (
+        modoProgresivoJuego === true &&
+        modoProgresivoCompletado === true
+    ) {
+        reiniciarModoProgresivoCompleto();
+
+        return;
+    }
+
+    reiniciarPartidaActual();
+}
+
+botonSiguienteNivel.addEventListener(
+    "click",
+    continuarSiguienteNivel
+);
+
+
 botonJugarDeNuevo.addEventListener(
     "click",
-    reiniciarPartidaActual
+    procesarJugarDeNuevo
 );
