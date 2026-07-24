@@ -263,7 +263,13 @@ body {
     filter: none;
     transform: none;
 }
+#botonSiguienteNivel {
+    background-color: rgb(255, 105, 0);
+}
 
+#botonSiguienteNivel:hover {
+    background-color: rgb(220, 65, 0);
+}
 #piePagina {
     padding: 14px;
     background-color: rgba(0, 0, 0, 0.82);
