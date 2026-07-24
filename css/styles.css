@@ -9,6 +9,110 @@
     display: none !important;
 }
 
+:root {
+    --imagenFondo: url("../assets/img/dbz.webp");
+    --iconoModoColor: url("../assets/img/esfera-dia.svg");
+    --colorFondoBase: rgb(116, 190, 230);
+    --colorCapaFondoInicio: rgba(255, 255, 255, 0);
+    --colorCapaFondoFin: rgba(255, 255, 255, 0);
+    --colorTextoPrincipal: rgb(18, 35, 54);
+    --colorTextoSuave: rgb(45, 56, 72);
+    --colorTextoOscuro: rgb(20, 32, 48);
+    --colorTextoBoton: rgb(255, 255, 255);
+
+    --colorPanelBase: rgba(255, 248, 224, 0.94);
+    --colorPanelClaro: rgba(255, 240, 178, 0.96);
+    --colorPanelOscuro: rgba(255, 205, 92, 0.96);
+    --colorPanelTransparente: rgba(255, 245, 210, 0.84);
+    --colorModalFondo: rgba(9, 25, 42, 0.48);
+    --colorLineaResultado: rgb(218, 154, 48);
+
+    --colorAcentoPrincipal: rgb(255, 145, 0);
+    --colorAcentoClaro: rgb(255, 190, 40);
+    --colorAcentoFuerte: rgb(230, 78, 0);
+    --colorAcentoFoco: rgb(255, 132, 0);
+    --colorSombraAcentoSuave: rgba(255, 132, 0, 0.42);
+    --colorSombraAcentoFuerte: rgba(255, 145, 0, 0.62);
+
+    --colorAzulPrincipal: rgb(12, 82, 148);
+    --colorAzulClaro: rgb(40, 132, 205);
+    --colorAzulOscuro: rgb(8, 61, 120);
+
+    --colorBordeClaro: rgb(150, 167, 186);
+    --colorCampoClaro: rgb(255, 255, 255);
+    --colorCampoFoco: rgb(255, 252, 238);
+
+    --colorBotonNaranjaInicio: rgb(255, 160, 20);
+    --colorBotonNaranjaFin: rgb(225, 82, 0);
+    --colorSombraBoton: rgb(156, 54, 0);
+
+    --colorCartaNaranja: rgba(255, 124, 0, 0.95);
+    --colorCartaAmarillo: rgba(255, 210, 75, 0.95);
+    --colorCartaRojo: rgba(190, 55, 0, 0.98);
+    --colorCartaEstrella: rgb(155, 25, 10);
+    --colorCartaRevelada: rgb(255, 250, 224);
+    --colorCartaEmparejada: rgb(226, 255, 234);
+    --colorCartaEmparejadaBrillo: rgb(210, 248, 222);
+    --colorCartaEmparejadaBorde: rgb(46, 180, 92);
+
+    --sombraPanel:
+        inset 0 2px 0 rgba(255, 255, 255, 0.12),
+        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
+        0 12px 32px rgba(0, 0, 0, 0.58);
+    --sombraTextoLogo:
+        2px 2px 0 rgb(255, 238, 120),
+        5px 5px 0 rgb(16, 65, 130),
+        8px 8px 0 rgba(0, 0, 0, 0.62),
+        0 0 18px rgba(255, 130, 0, 0.55);
+}
+
+:root.modoNoche {
+    --imagenFondo: url("../assets/img/dbz2-noche-juego.png");
+    --iconoModoColor: url("../assets/img/esfera-noche.svg");
+    --colorFondoBase: rgb(8, 28, 48);
+    --colorCapaFondoInicio: rgba(5, 20, 35, 0.38);
+    --colorCapaFondoFin: rgba(5, 20, 35, 0.62);
+    --colorTextoPrincipal: rgb(255, 255, 255);
+    --colorTextoSuave: rgb(255, 245, 220);
+    --colorTextoOscuro: rgb(25, 35, 48);
+    --colorTextoBoton: rgb(255, 255, 255);
+
+    --colorPanelBase: rgba(6, 35, 67, 0.94);
+    --colorPanelClaro: rgba(12, 58, 108, 0.96);
+    --colorPanelOscuro: rgba(4, 26, 55, 0.96);
+    --colorPanelTransparente: rgba(3, 18, 34, 0.78);
+    --colorModalFondo: rgba(0, 0, 0, 0.75);
+    --colorLineaResultado: rgb(80, 105, 130);
+
+    --colorAcentoPrincipal: rgb(255, 177, 0);
+    --colorAcentoClaro: rgb(255, 220, 70);
+    --colorAcentoFuerte: rgb(255, 105, 0);
+    --colorAcentoFoco: rgb(255, 150, 0);
+    --colorSombraAcentoSuave: rgba(255, 150, 0, 0.5);
+    --colorSombraAcentoFuerte: rgba(255, 177, 0, 0.75);
+
+    --colorAzulPrincipal: rgb(16, 65, 130);
+    --colorAzulClaro: rgb(25, 89, 168);
+    --colorAzulOscuro: rgb(9, 45, 98);
+
+    --colorBordeClaro: rgb(185, 198, 212);
+    --colorCampoClaro: rgb(246, 249, 252);
+    --colorCampoFoco: rgb(255, 255, 255);
+
+    --colorBotonNaranjaInicio: rgb(255, 146, 0);
+    --colorBotonNaranjaFin: rgb(225, 70, 0);
+    --colorSombraBoton: rgb(145, 38, 0);
+
+    --colorCartaNaranja: rgba(255, 105, 0, 0.95);
+    --colorCartaAmarillo: rgba(255, 185, 0, 0.95);
+    --colorCartaRojo: rgba(170, 40, 0, 0.98);
+    --colorCartaEstrella: rgb(155, 25, 10);
+    --colorCartaRevelada: rgb(255, 246, 205);
+    --colorCartaEmparejada: rgb(232, 255, 238);
+    --colorCartaEmparejadaBrillo: rgb(218, 255, 228);
+    --colorCartaEmparejadaBorde: rgb(80, 220, 120);
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -16,17 +120,17 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     overflow-x: hidden;
-    background-color: rgb(8, 28, 48);
+    background-color: var(--colorFondoBase);
     background-image:
         linear-gradient(
-            rgba(5, 20, 35, 0.48),
-            rgba(5, 20, 35, 0.65)
+            var(--colorCapaFondoInicio),
+            var(--colorCapaFondoFin)
         ),
-        url("../assets/img/dbz.webp");
+        var(--imagenFondo);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoPrincipal);
     font-family: "Nunito", Arial, sans-serif;
 }
 
@@ -40,23 +144,19 @@ body {
 }
 
 #encabezadoPrincipal h1 {
-    color: rgb(255, 177, 0);
+    color: var(--colorAcentoPrincipal);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 68px;
     font-weight: normal;
     line-height: 0.95;
     letter-spacing: 2px;
-    text-shadow:
-        2px 2px 0 rgb(255, 238, 120),
-        5px 5px 0 rgb(16, 65, 130),
-        8px 8px 0 rgba(0, 0, 0, 0.62),
-        0 0 18px rgba(255, 130, 0, 0.55);
+    text-shadow: var(--sombraTextoLogo);
 }
 
 #encabezadoPrincipal p {
     max-width: 560px;
-    color: rgb(255, 245, 220);
+    color: var(--colorTextoBoton);
     font-size: 17px;
     font-weight: 800;
     line-height: 1.35;
@@ -83,25 +183,22 @@ body {
     max-width: 520px;
     min-height: 430px;
     padding: 38px;
-    border: 3px solid rgb(255, 150, 0);
+    border: 3px solid var(--colorAcentoFoco);
     border-radius: 8px;
-    background-color: rgba(6, 35, 67, 0.94);
+    background-color: var(--colorPanelBase);
     background-image:
         linear-gradient(
-            rgba(12, 58, 108, 0.96),
-            rgba(4, 26, 55, 0.96)
+            var(--colorPanelClaro),
+            var(--colorPanelOscuro)
         );
-    box-shadow:
-        inset 0 2px 0 rgba(255, 255, 255, 0.12),
-        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
-        0 12px 32px rgba(0, 0, 0, 0.58);
+    box-shadow: var(--sombraPanel);
 }
 
 #inicioPartida h2 {
     position: relative;
     width: fit-content;
     margin: 0 auto;
-    color: rgb(255, 220, 70);
+    color: var(--colorAcentoClaro);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 38px;
@@ -109,14 +206,14 @@ body {
     letter-spacing: 2px;
     text-align: center;
     text-shadow:
-        2px 2px 0 rgb(16, 65, 130),
+        2px 2px 0 var(--colorAzulPrincipal),
         4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 #inicioPartida > p {
     max-width: 390px;
     margin: 0 auto;
-    color: rgb(255, 245, 220);
+    color: var(--colorTextoSuave);
     font-size: 16px;
     font-weight: 800;
     line-height: 1.35;
@@ -140,7 +237,7 @@ body {
 }
 
 .grupoCampo label {
-    color: rgb(238, 243, 248);
+    color: var(--colorTextoPrincipal);
     font-size: 15px;
     font-weight: 800;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.55);
@@ -150,10 +247,10 @@ body {
 .grupoCampo select {
     width: 100%;
     padding: 14px;
-    border: 2px solid rgb(185, 198, 212);
+    border: 2px solid var(--colorBordeClaro);
     border-radius: 6px;
-    background-color: rgb(246, 249, 252);
-    color: rgb(25, 35, 48);
+    background-color: var(--colorCampoClaro);
+    color: var(--colorTextoOscuro);
     font-family: "Nunito", Arial, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -173,8 +270,8 @@ body {
 
 .grupoCampo input:focus,
 .grupoCampo select:focus {
-    border-color: rgb(255, 150, 0);
-    background-color: rgb(255, 255, 255);
+    border-color: var(--colorAcentoFoco);
+    background-color: var(--colorCampoFoco);
     box-shadow:
         inset 0 2px 4px rgba(0, 0, 0, 0.06),
         0 0 0 3px rgba(255, 150, 0, 0.22);
@@ -186,7 +283,7 @@ body {
     padding: 0;
     border: 1px solid transparent;
     border-radius: 6px;
-    color: rgb(255, 230, 150);
+    color: var(--colorTextoSuave);
     font-size: 14px;
     font-weight: 800;
     text-align: center;
@@ -206,15 +303,15 @@ body {
     justify-content: center;
     align-items: center;
     padding: 13px;
-    border: 3px solid rgb(255, 190, 0);
+    border: 3px solid var(--colorAcentoClaro);
     border-radius: 7px;
-    background-color: rgb(255, 105, 0);
+    background-color: var(--colorAcentoFuerte);
     background-image:
         linear-gradient(
-            rgb(255, 146, 0),
-            rgb(225, 70, 0)
+            var(--colorBotonNaranjaInicio),
+            var(--colorBotonNaranjaFin)
         );
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     text-transform: uppercase;
     font-size: 23px;
@@ -223,7 +320,7 @@ body {
     text-shadow: 2px 2px 0 rgba(90, 20, 0, 0.65);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.22),
-        0 6px 0 rgb(145, 38, 0),
+        0 6px 0 var(--colorSombraBoton),
         0 10px 18px rgba(0, 0, 0, 0.42);
     transition:
         transform 0.18s,
@@ -233,12 +330,12 @@ body {
 }
 
 #botonIniciarPartida:hover {
-    border-color: rgb(255, 232, 95);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.24),
-        0 8px 0 rgb(145, 38, 0),
+        0 8px 0 var(--colorSombraBoton),
         0 14px 24px rgba(0, 0, 0, 0.48);
 }
 
@@ -246,12 +343,12 @@ body {
     transform: translateY(2px);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.18),
-        0 3px 0 rgb(145, 38, 0),
+        0 3px 0 var(--colorSombraBoton),
         0 7px 12px rgba(0, 0, 0, 0.42);
 }
 
 #botonIniciarPartida:focus-visible {
-    outline: 3px solid rgb(255, 235, 120);
+    outline: 3px solid var(--colorAcentoClaro);
     outline-offset: 3px;
 }
 #botonIniciarPartida:disabled {
@@ -264,16 +361,22 @@ body {
     transform: none;
 }
 #botonSiguienteNivel {
-    background-color: rgb(255, 105, 0);
+    background-color: var(--colorAcentoFuerte);
+    background-image:
+        linear-gradient(
+            var(--colorBotonNaranjaInicio),
+            var(--colorBotonNaranjaFin)
+        );
 }
 
 #botonSiguienteNivel:hover {
-    background-color: rgb(220, 65, 0);
+    border-color: var(--colorAcentoClaro);
+    filter: brightness(1.08);
 }
 #piePagina {
     padding: 14px;
     background-color: rgba(0, 0, 0, 0.82);
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-size: 13px;
     font-weight: 600;
     text-align: center;
@@ -288,11 +391,7 @@ body.partidaActiva #encabezadoPrincipal h1 {
     font-size: 46px;
     line-height: 0.95;
     letter-spacing: 2px;
-    text-shadow:
-        2px 2px 0 rgb(255, 238, 120),
-        5px 5px 0 rgb(16, 65, 130),
-        8px 8px 0 rgba(0, 0, 0, 0.62),
-        0 0 18px rgba(255, 130, 0, 0.55);
+    text-shadow: var(--sombraTextoLogo);
 }
 
 body.partidaActiva #encabezadoPrincipal p {
@@ -316,6 +415,54 @@ body.partidaActiva #piePagina {
 
 body.partidaActiva #navegacionPrincipal {
     display: none;
+}
+
+#botonModoColor {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: var(--iconoModoColor);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    line-height: 1;
+    text-indent: -9999px;
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.72))
+        drop-shadow(0 0 8px rgba(255, 177, 0, 0.48));
+    cursor: pointer;
+    transition:
+        transform 0.18s,
+        filter 0.18s;
+}
+
+#botonModoColor:hover {
+    filter: brightness(1.08);
+    transform: scale(1.12);
+}
+
+#botonModoColor:active {
+    transform: scale(0.95);
+}
+
+#botonModoColor:focus-visible {
+    outline: 3px solid var(--colorAcentoClaro);
+    outline-offset: 3px;
+}
+
+:root.modoNoche #botonModoColor {
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.72))
+        drop-shadow(0 0 9px rgba(160, 210, 255, 0.5));
 }
 
 #seccionJuego {
@@ -344,7 +491,7 @@ body.partidaActiva #navegacionPrincipal {
     justify-content: center;
     align-items: baseline;
     gap: 10px;
-    color: rgb(255, 245, 220);
+    color: var(--colorTextoSuave);
     font-family: "Nunito", Arial, sans-serif;
     font-size: 18px;
     font-weight: 900;
@@ -356,7 +503,7 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 #nivelActual {
-    color: rgb(255, 220, 70);
+    color: var(--colorAcentoClaro);
 }
 
 #tableroJuego {
@@ -390,17 +537,17 @@ body.partidaActiva #navegacionPrincipal {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border: 3px solid rgb(255, 177, 0);
+    border: 3px solid var(--colorAcentoPrincipal);
     border-radius: 8px;
-    background-color: rgb(13, 59, 111);
+    background-color: var(--colorAzulPrincipal);
     background-image:
         radial-gradient(
             circle at 50% 42%,
-            rgba(255, 185, 0, 0.95) 0%,
-            rgba(255, 105, 0, 0.95) 42%,
-            rgba(170, 40, 0, 0.98) 76%
+            var(--colorCartaAmarillo) 0%,
+            var(--colorCartaNaranja) 42%,
+            var(--colorCartaRojo) 76%
         );
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoPrincipal);
     box-shadow:
         inset 0 -10px 0 rgba(90, 20, 0, 0.35),
         0 6px 14px rgba(0, 0, 0, 0.45);
@@ -426,13 +573,13 @@ body.partidaActiva #navegacionPrincipal {
         ),
         radial-gradient(
             circle,
-            rgb(255, 220, 70) 0%,
-            rgb(255, 145, 0) 52%,
+            var(--colorAcentoClaro) 0%,
+            var(--colorAcentoFoco) 52%,
             rgb(215, 58, 0) 100%
         );
     box-shadow:
         inset -8px -10px 0 rgba(120, 30, 0, 0.32),
-        0 0 18px rgba(255, 177, 0, 0.5);
+        0 0 18px var(--colorSombraAcentoSuave);
 }
 
 .tableroFacil .carta {
@@ -458,10 +605,10 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .carta:not(.cartaRevelada):not(.cartaEmparejada):hover {
-    border-color: rgb(255, 230, 90);
+    border-color: var(--colorAcentoClaro);
     box-shadow:
         inset 0 -10px 0 rgba(90, 20, 0, 0.25),
-        0 0 18px rgba(255, 177, 0, 0.75),
+        0 0 18px var(--colorSombraAcentoFuerte),
         0 8px 16px rgba(0, 0, 0, 0.48);
     transform: translateY(-2px);
 }
@@ -469,12 +616,12 @@ body.partidaActiva #navegacionPrincipal {
 .reversoCarta {
     position: relative;
     z-index: 1;
-    color: rgb(155, 25, 10);
+    color: var(--colorCartaEstrella);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 44px;
     line-height: 1;
     text-shadow:
-        1px 1px 0 rgb(255, 235, 120),
+        1px 1px 0 var(--colorAcentoClaro),
         3px 3px 0 rgba(80, 15, 0, 0.4);
 }
 
@@ -500,7 +647,7 @@ body.partidaActiva #navegacionPrincipal {
 
 .nombreCarta {
     display: none;
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoPrincipal);
     font-size: 11px;
     font-weight: bold;
     text-align: center;
@@ -511,16 +658,16 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .cartaRevelada {
-    border-color: rgb(255, 230, 90);
-    background-color: rgb(255, 246, 205);
+    border-color: var(--colorAcentoClaro);
+    background-color: var(--colorCartaRevelada);
     background-image:
         linear-gradient(
-            rgb(255, 252, 232),
-            rgb(255, 228, 128)
+            var(--colorCampoFoco),
+            var(--colorCartaRevelada)
         );
     box-shadow:
         inset 0 0 0 2px rgba(255, 145, 0, 0.42),
-        0 0 14px rgba(255, 177, 0, 0.5),
+        0 0 14px var(--colorSombraAcentoSuave),
         0 6px 14px rgba(0, 0, 0, 0.42);
     transform: none;
 }
@@ -539,7 +686,7 @@ body.partidaActiva #navegacionPrincipal {
     min-height: 18px;
     padding-top: 3px;
     border-top: 1px solid rgba(210, 90, 0, 0.45);
-    color: rgb(20, 40, 65);
+    color: var(--colorTextoOscuro);
     text-shadow: none;
 }
 
@@ -549,12 +696,12 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .cartaEmparejada {
-    border-color: rgb(80, 220, 120);
-    background-color: rgb(232, 255, 238);
+    border-color: var(--colorCartaEmparejadaBorde);
+    background-color: var(--colorCartaEmparejada);
     background-image:
         linear-gradient(
-            rgb(255, 255, 245),
-            rgb(218, 255, 228)
+            var(--colorCampoFoco),
+            var(--colorCartaEmparejadaBrillo)
         );
     box-shadow:
         inset 0 0 0 2px rgba(80, 220, 120, 0.38),
@@ -572,9 +719,9 @@ body.partidaActiva #navegacionPrincipal {
     width: 100%;
     max-width: 760px;
     padding: 8px 10px;
-    border-top: 2px solid rgba(255, 177, 0, 0.75);
-    border-bottom: 2px solid rgba(255, 177, 0, 0.75);
-    background-color: rgba(3, 18, 34, 0.78);
+    border-top: 2px solid var(--colorAcentoPrincipal);
+    border-bottom: 2px solid var(--colorAcentoPrincipal);
+    background-color: var(--colorPanelTransparente);
     box-shadow:
         0 8px 18px rgba(0, 0, 0, 0.38),
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
@@ -589,14 +736,14 @@ body.partidaActiva #navegacionPrincipal {
     min-width: 112px;
     min-height: 34px;
     padding: 7px 12px;
-    border: 1px solid rgba(255, 190, 0, 0.9);
+    border: 1px solid var(--colorAcentoClaro);
     border-radius: 6px;
     background-image:
         linear-gradient(
-            rgb(18, 76, 138),
-            rgb(7, 39, 78)
+            var(--colorAzulClaro),
+            var(--colorAzulOscuro)
         );
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-size: 13px;
     font-weight: 800;
     text-align: center;
@@ -607,7 +754,7 @@ body.partidaActiva #navegacionPrincipal {
 
 .datoEstadistica span {
     min-width: 24px;
-    color: rgb(255, 220, 70);
+    color: var(--colorAcentoClaro);
     font-size: 15px;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
 }
@@ -622,7 +769,7 @@ body.partidaActiva #navegacionPrincipal {
     width: 100%;
     height: 100%;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: var(--colorModalFondo);
     z-index: 10;
 }
 
@@ -633,29 +780,26 @@ body.partidaActiva #navegacionPrincipal {
     width: 100%;
     max-width: 430px;
     padding: 32px;
-    border: 3px solid rgb(255, 177, 0);
+    border: 3px solid var(--colorAcentoPrincipal);
     border-radius: 8px;
-    background-color: rgb(6, 35, 67);
+    background-color: var(--colorPanelBase);
     background-image:
         linear-gradient(
-            rgb(12, 58, 108),
-            rgb(4, 26, 55)
+            var(--colorPanelClaro),
+            var(--colorPanelOscuro)
         );
-    box-shadow:
-        inset 0 2px 0 rgba(255, 255, 255, 0.12),
-        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
-        0 12px 32px rgba(0, 0, 0, 0.6);
-    color: rgb(255, 255, 255);
+    box-shadow: var(--sombraPanel);
+    color: var(--colorTextoPrincipal);
 }
 
 #contenidoModalResultado h2 {
-    color: rgb(255, 177, 0);
+    color: var(--colorAcentoPrincipal);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 34px;
     font-weight: normal;
     letter-spacing: 2px;
     text-align: center;
-    text-shadow: 2px 2px 0 rgb(16, 65, 130);
+    text-shadow: 2px 2px 0 var(--colorAzulPrincipal);
 }
 
 #datosResultado {
@@ -669,12 +813,12 @@ body.partidaActiva #navegacionPrincipal {
     justify-content: space-between;
     gap: 16px;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgb(80, 105, 130);
+    border-bottom: 1px solid var(--colorLineaResultado);
     font-weight: bold;
 }
 
 #datosResultado span {
-    color: rgb(255, 177, 0);
+    color: var(--colorAcentoPrincipal);
 }
 
 #accionesResultado {
@@ -689,9 +833,9 @@ body.partidaActiva #navegacionPrincipal {
     align-items: center;
     min-height: 48px;
     padding: 13px 16px;
-    border: 3px solid rgb(255, 190, 0);
+    border: 3px solid var(--colorAcentoClaro);
     border-radius: 7px;
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-family: "Nunito", Arial, sans-serif;
     font-size: 17px;
     font-weight: 900;
@@ -711,31 +855,31 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 #botonJugarDeNuevo {
-    background-color: rgb(255, 105, 0);
+    background-color: var(--colorAcentoFuerte);
     background-image:
         linear-gradient(
-            rgb(255, 146, 0),
-            rgb(225, 70, 0)
+            var(--colorBotonNaranjaInicio),
+            var(--colorBotonNaranjaFin)
         );
 }
 
 #botonJugarDeNuevo:hover {
-    border-color: rgb(255, 232, 95);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
 }
 
 #botonCambiarDatos {
-    background-color: rgb(16, 65, 130);
+    background-color: var(--colorAzulPrincipal);
     background-image:
         linear-gradient(
-            rgb(25, 89, 168),
-            rgb(9, 45, 98)
+            var(--colorAzulClaro),
+            var(--colorAzulOscuro)
         );
 }
 
 #botonCambiarDatos:hover {
-    border-color: rgb(255, 220, 70);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
 }
@@ -749,7 +893,7 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .botonModalResultado:focus-visible {
-    outline: 3px solid rgb(255, 235, 120);
+    outline: 3px solid var(--colorAcentoClaro);
     outline-offset: 3px;
 }
 
@@ -766,9 +910,9 @@ body.partidaActiva #navegacionPrincipal {
     align-items: center;
     min-height: 38px;
     padding: 8px 14px;
-    border: 2px solid rgb(255, 190, 0);
+    border: 2px solid var(--colorAcentoClaro);
     border-radius: 6px;
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-family: "Nunito", Arial, sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -788,31 +932,31 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 #botonReiniciarPartida {
-    background-color: rgb(255, 105, 0);
+    background-color: var(--colorAcentoFuerte);
     background-image:
         linear-gradient(
-            rgb(255, 136, 0),
-            rgb(218, 66, 0)
+            var(--colorBotonNaranjaInicio),
+            var(--colorBotonNaranjaFin)
         );
 }
 
 #botonReiniciarPartida:hover {
-    border-color: rgb(255, 232, 95);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
 }
 
 #botonVolverInicio {
-    background-color: rgb(16, 65, 130);
+    background-color: var(--colorAzulPrincipal);
     background-image:
         linear-gradient(
-            rgb(25, 89, 168),
-            rgb(9, 45, 98)
+            var(--colorAzulClaro),
+            var(--colorAzulOscuro)
         );
 }
 
 #botonVolverInicio:hover {
-    border-color: rgb(255, 220, 70);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
 }
@@ -826,7 +970,7 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .botonAccionPartida:focus-visible {
-    outline: 3px solid rgb(255, 235, 120);
+    outline: 3px solid var(--colorAcentoClaro);
     outline-offset: 3px;
 }
 
@@ -858,25 +1002,22 @@ body.partidaActiva #navegacionPrincipal {
     max-width: 520px;
     min-height: auto;
     padding: 28px 34px;
-    border: 3px solid rgb(255, 150, 0);
+    border: 3px solid var(--colorAcentoFoco);
     border-radius: 8px;
-    background-color: rgba(6, 35, 67, 0.94);
+    background-color: var(--colorPanelBase);
     background-image:
         linear-gradient(
-            rgba(12, 58, 108, 0.96),
-            rgba(4, 26, 55, 0.96)
+            var(--colorPanelClaro),
+            var(--colorPanelOscuro)
         );
-    box-shadow:
-        inset 0 2px 0 rgba(255, 255, 255, 0.12),
-        inset 0 0 0 2px rgba(255, 210, 60, 0.12),
-        0 12px 32px rgba(0, 0, 0, 0.58);
+    box-shadow: var(--sombraPanel);
 }
 
 #seccionContacto h2 {
     position: relative;
     width: fit-content;
     margin: 0 auto;
-    color: rgb(255, 220, 70);
+    color: var(--colorAcentoClaro);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 38px;
     font-weight: normal;
@@ -884,14 +1025,14 @@ body.partidaActiva #navegacionPrincipal {
     text-align: center;
     text-transform: uppercase;
     text-shadow:
-        2px 2px 0 rgb(16, 65, 130),
+        2px 2px 0 var(--colorAzulPrincipal),
         4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 #seccionContacto > p {
     max-width: 390px;
     margin: 0 auto;
-    color: rgb(255, 245, 220);
+    color: var(--colorTextoSuave);
     font-size: 16px;
     font-weight: 800;
     line-height: 1.35;
@@ -908,10 +1049,10 @@ body.partidaActiva #navegacionPrincipal {
 #formularioContacto textarea {
     width: 100%;
     padding: 14px;
-    border: 2px solid rgb(185, 198, 212);
+    border: 2px solid var(--colorBordeClaro);
     border-radius: 6px;
-    background-color: rgb(246, 249, 252);
-    color: rgb(25, 35, 48);
+    background-color: var(--colorCampoClaro);
+    color: var(--colorTextoOscuro);
     font-family: "Nunito", Arial, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -927,8 +1068,8 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 #formularioContacto textarea:focus {
-    border-color: rgb(255, 150, 0);
-    background-color: rgb(255, 255, 255);
+    border-color: var(--colorAcentoFoco);
+    background-color: var(--colorCampoFoco);
     box-shadow:
         inset 0 2px 4px rgba(0, 0, 0, 0.06),
         0 0 0 3px rgba(255, 150, 0, 0.22);
@@ -937,7 +1078,7 @@ body.partidaActiva #navegacionPrincipal {
 
 .mensajeErrorCampo {
     min-height: 14px;
-    color: rgb(255, 230, 150);
+    color: var(--colorTextoSuave);
     font-size: 13px;
     font-weight: 800;
     text-align: center;
@@ -945,7 +1086,7 @@ body.partidaActiva #navegacionPrincipal {
 
 .mensajeResultadoContacto {
     min-height: 16px;
-    color: rgb(255, 230, 150);
+    color: var(--colorTextoSuave);
     font-size: 14px;
     font-weight: 800;
     text-align: center;
@@ -967,22 +1108,22 @@ body.partidaActiva #navegacionPrincipal {
     justify-content: center;
     align-items: center;
     padding: 13px;
-    border: 3px solid rgb(255, 190, 0);
+    border: 3px solid var(--colorAcentoClaro);
     border-radius: 7px;
-    background-color: rgb(255, 105, 0);
+    background-color: var(--colorAcentoFuerte);
     background-image:
         linear-gradient(
-            rgb(255, 146, 0),
-            rgb(225, 70, 0)
+            var(--colorBotonNaranjaInicio),
+            var(--colorBotonNaranjaFin)
         );
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-family: "FuenteDragonBall", Arial, sans-serif;
     font-size: 22px;
     letter-spacing: 1px;
     text-shadow: 2px 2px 0 rgba(90, 20, 0, 0.65);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.22),
-        0 6px 0 rgb(145, 38, 0),
+        0 6px 0 var(--colorSombraBoton),
         0 10px 18px rgba(0, 0, 0, 0.42);
     transition:
         transform 0.18s,
@@ -992,12 +1133,12 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 #botonEnviarContacto:hover {
-    border-color: rgb(255, 232, 95);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.24),
-        0 8px 0 rgb(145, 38, 0),
+        0 8px 0 var(--colorSombraBoton),
         0 14px 24px rgba(0, 0, 0, 0.48);
 }
 
@@ -1005,12 +1146,12 @@ body.partidaActiva #navegacionPrincipal {
     transform: translateY(2px);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.18),
-        0 3px 0 rgb(145, 38, 0),
+        0 3px 0 var(--colorSombraBoton),
         0 7px 12px rgba(0, 0, 0, 0.42);
 }
 
 #botonEnviarContacto:focus-visible {
-    outline: 3px solid rgb(255, 235, 120);
+    outline: 3px solid var(--colorAcentoClaro);
     outline-offset: 3px;
 }
 
@@ -1027,9 +1168,9 @@ body.partidaActiva #navegacionPrincipal {
     justify-content: center;
     gap: 8px;
     padding: 8px 10px;
-    border-top: 1px solid rgba(255, 190, 0, 0.55);
-    border-bottom: 2px solid rgba(255, 150, 0, 0.75);
-    background-color: rgba(3, 18, 34, 0.78);
+    border-top: 1px solid var(--colorAcentoClaro);
+    border-bottom: 2px solid var(--colorAcentoFoco);
+    background-color: var(--colorPanelTransparente);
     box-shadow:
         0 7px 16px rgba(0, 0, 0, 0.38),
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
@@ -1043,15 +1184,15 @@ body.partidaActiva #navegacionPrincipal {
     min-width: 82px;
     min-height: 34px;
     padding: 8px 14px;
-    border: 2px solid rgb(255, 177, 0);
+    border: 2px solid var(--colorAcentoPrincipal);
     border-radius: 6px;
-    background-color: rgba(6, 35, 67, 0.9);
+    background-color: var(--colorPanelBase);
     background-image:
         linear-gradient(
-            rgb(18, 76, 138),
-            rgb(7, 39, 78)
+            var(--colorAzulClaro),
+            var(--colorAzulOscuro)
         );
-    color: rgb(255, 255, 255);
+    color: var(--colorTextoBoton);
     font-size: 14px;
     font-weight: 800;
     text-decoration: none;
@@ -1068,7 +1209,7 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .enlaceNavegacion:hover {
-    border-color: rgb(255, 232, 95);
+    border-color: var(--colorAcentoClaro);
     filter: brightness(1.08);
     transform: translateY(-2px);
     box-shadow:
@@ -1086,22 +1227,22 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 .enlaceNavegacion:focus-visible {
-    outline: 3px solid rgb(255, 235, 120);
+    outline: 3px solid var(--colorAcentoClaro);
     outline-offset: 3px;
 }
 
 .enlaceActivo {
-    background-color: rgb(255, 105, 0);
+    background-color: var(--colorAcentoFuerte);
     background-image:
         linear-gradient(
-            rgb(255, 146, 0),
-            rgb(225, 70, 0)
+            var(--colorBotonNaranjaInicio),
+            var(--colorBotonNaranjaFin)
         );
-    color: rgb(255, 255, 255);
-    border-color: rgb(255, 232, 95);
+    color: var(--colorTextoBoton);
+    border-color: var(--colorAcentoClaro);
     box-shadow:
         inset 0 2px 0 rgba(255, 255, 255, 0.22),
-        0 4px 0 rgb(145, 38, 0),
+        0 4px 0 var(--colorSombraBoton),
         0 8px 14px rgba(0, 0, 0, 0.38);
 }
 
@@ -1274,6 +1415,14 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 @media (max-width: 600px) {
+    #botonModoColor {
+        top: 8px;
+        right: 8px;
+        width: 38px;
+        height: 38px;
+        font-size: 27px;
+    }
+
     #encabezadoPrincipal h1 {
         font-size: 52px;
     }
@@ -1305,6 +1454,12 @@ body.partidaActiva #navegacionPrincipal {
 }
 
 @media (max-width: 480px) {
+    #botonModoColor {
+        width: 34px;
+        height: 34px;
+        font-size: 25px;
+    }
+
     #encabezadoPrincipal {
         padding-top: 16px;
     }
