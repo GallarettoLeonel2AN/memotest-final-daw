@@ -12,6 +12,15 @@
     >
     <title>Contacto - Dragon Ball Memotest</title>
     <link rel="icon" href="../assets/img/esfera-dragon.svg" type="image/svg+xml">
+    <script>
+        try {
+            if (localStorage.getItem("modoColorDragonBall") === "noche") {
+                document.documentElement.classList.add("modoNoche");
+            }
+        } catch (error) {
+            document.documentElement.classList.remove("modoNoche");
+        }
+    </script>
 
     <link
     rel="stylesheet"
@@ -68,6 +77,13 @@
                 </li>
             </ul>
         </nav>
+
+        <button
+            id="botonModoColor"
+            type="button"
+            aria-pressed="false"
+            aria-label="Cambiar a modo noche"
+        ></button>
     </header>
 
     <main id="contenidoContacto">
@@ -150,6 +166,7 @@
         </section>
     </main>
 
+    <script src="../js/modo-color.js"></script>
     <script src="../js/contacto.js"></script>
 </body>
 </html>
