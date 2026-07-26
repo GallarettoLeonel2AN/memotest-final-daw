@@ -1,3 +1,5 @@
+'use strict';
+
 async function obtenerPersonajes(cantidad) {
     var direccionApi;
     var respuesta;

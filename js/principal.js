@@ -1,3 +1,5 @@
+'use strict';
+
 var formularioInicio = document.getElementById(
     "formularioInicio"
 );
@@ -106,6 +108,7 @@ function mostrarJuego(nombre, nivel) {
     seccionJuego.hidden = false;
     document.body.classList.add("partidaActiva");
 }
+
 function generarNivelProgresivo() {
     var nivel;
     var cantidadPersonajes;
@@ -120,8 +123,7 @@ function generarNivelProgresivo() {
     );
 
     personajesNivel = personajesCargados.slice(
-        0,
-        cantidadPersonajes
+        0,cantidadPersonajes
     );
 
     cartasPreparadas = prepararCartas(
