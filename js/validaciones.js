@@ -1,3 +1,5 @@
+'use strict';
+
 function validarNombreJugador(nombre) {
     var nombreLimpio;
 

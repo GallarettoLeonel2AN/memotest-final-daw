@@ -1,3 +1,5 @@
+'use strict';
+
 var primeraCartaSeleccionada = null;
 var segundaCartaSeleccionada = null;
 var intentos = 0;

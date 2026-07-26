@@ -1,3 +1,5 @@
+'use strict';
+
 var botonModoColor = document.getElementById(
     "botonModoColor"
 );

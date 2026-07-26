@@ -1,3 +1,5 @@
+'use strict';
+
 var formularioContacto = document.getElementById(
     "formularioContacto"
 );
