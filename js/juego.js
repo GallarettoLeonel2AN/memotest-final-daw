@@ -19,6 +19,7 @@ var puntajeAcumuladoProgresivo = 0;
 var intentosAcumuladosProgresivo = 0;
 var erroresAcumuladosProgresivo = 0;
 var segundosAcumuladosProgresivo = 0;
+var cartasJuegoActual = [];
 
 
 var cantidadIntentosElemento = document.getElementById(
